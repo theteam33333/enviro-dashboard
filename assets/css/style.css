@@ -9,7 +9,6 @@
     align-items: center;
 }
 
-.infoBox,
-.newsBox {
+.infoBox {
     border: solid black 2px;
 }

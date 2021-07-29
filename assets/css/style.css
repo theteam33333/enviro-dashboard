@@ -1,0 +1,14 @@
+.header,
+.footer {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 16px;
+}
+
+.columns {
+    align-items: center;
+}
+
+.infoBox {
+    border: solid black 2px;
+}

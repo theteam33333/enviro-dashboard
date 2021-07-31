@@ -1,9 +1,53 @@
-.header,
-.footer {
-    text-align: center;
-    font-size: 32px;
-    margin-top: 16px;
+body {
+    background-color: #ADE8F4;
 }
+
+.main {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+.section {
+    flex: 1;
+
+}
+
+.widget {
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.headr,
+.footr {
+    background-color: #023e8a;
+    font-size: 32px;
+    color: #caf0f8;
+}
+
+.footr {
+    margin-top: 10px;
+}
+
+.headr {
+    margin-bottom: -12px;
+}
+
+
+.foot {
+    margin-top: 12px;
+    margin-bottom: 0px;
+}
+
+.head,
+.foot {
+    padding-left: 40px;
+}
+
+#heroRow {
+    height: 400px;
+}
+
 
 .columns {
     align-items: center;
@@ -11,90 +55,18 @@
 
 .infoBox {
     border: solid black 2px;
+    margin-left: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.hero-body {
+    background-position: 20%;
+    background-repeat:  no-repeat;
+    /*background-attachment: fixed;*/
+    background-size:  cover;
+    background-color: #999;
+    height: 500px;
+
+}
 
 /* Colin -------------------------------------------------------------------------------------------*/
 /* THIS IS THE START OF THE STYLE FOR THE SEARCH INPUT FORM -------------------------------------------------------------------------------------------*/

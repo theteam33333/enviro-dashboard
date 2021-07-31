@@ -9,195 +9,53 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 </head>
-<body>
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<body class="main">
  <!-- michael -->
  <!-- header -->
- 
- <div class="columns">
-    <div class="column is-12 header">
-        <h1>Header</h1>
-    </div>
- </div>
-
-
-
-
-
-
-
-
-
-
- <!-- Colin --------------------------------------------------------------------------------------->
-  <!-- Hero and search ---------------------------------------------------------------------------->
-  <section class="hero is-primary is-medium">
-    <!-- Hero head: will stick at the top -->
-    <div class="hero-head">
-      <nav class="navbar">
-        <div class="container">
-          <div class="navbar-brand">
-            <a class="navbar-item">
-              <!--This is the Logo image -->
-              <!--img src="https://bulma.io/images/bulma-type-white.png" alt="Logo"-->
-            </a>
-            <span class="navbar-burger" data-target="navbarMenuHeroA">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </div>
-          <div id="navbarMenuHeroA" class="navbar-menu">
-            <div class="navbar-end">
-          <!--THIS ARE THE NAVBAR ITEMS ------------------------------------------------------->
-              <!--a class="navbar-item is-active">
-                Home
-              </a>
-              <a class="navbar-item">
-                Work
-              </a>
-              <a class="navbar-item">
-                About Me
-              </a>
-              <span class="navbar-item">
-                <a class="button is-primary is-inverted">
-                  <span class="icon">
-                    <i class="fab fa-github"></i>
-                  </span>
-                  <span>Download</span>
-                </a-->
-              </span>
-            </div>
-          </div>
+ <div>
+    <div class="columns">
+        <div class="column is-12 headr">
+            <h1 class="head">The Climate is Changing...</h1>
         </div>
-      </nav>
     </div>
-  
-    <!-- Hero content: will be in the middle -->
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <p class="title">
-    
-    <!--THIS IS THE START OF THE SEARCH INPUT FORM ------------------------------------------------------------------>
-          <div class="wrapper">
-            <div class="search_box">
-                <div class="dropdown">
-                    <div class="default_option">All</div>  
-                    <ul>
-                      <!--We could remove the dropdown but i is still a nice piece-->
-                      <li>All</li>
-                      <li>Recent</li>
-                      <li>Popular</li>
-                    </ul>
+    <!-- first row, widget space -->
+    <section class="hero is-primary is-medium">
+        <div class="hero-body" style="background-image: url(./assets/heroimg.jpg)">
+            <div class="columns" id="heroRow">
+                <div class="column is-1"></div>
+                <div class="column is-5"></div>
+
+                <div class="column is-5">
+                    <div class="block widget">
+                        <div class="wrapper">
+                            <div class="search_box">
+                                <div class="dropdown">
+                                    <div class="default_option">All</div>  
+                                    <ul>
+                                      <!--We could remove the dropdown but i is still a nice piece-->
+                                      <li>All</li>
+                                      <li>Recent</li>
+                                      <li>Popular</li>
+                                    </ul>
+                                </div>
+                                <div class="search_field">
+                                  <input type="text" class="input" placeholder="Search in your Area">
+                                  <i class="fas fa-search"></i>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block widget">
+                        <h1 style="text-align: center;">widget area</h1>
+                    </div>
                 </div>
-                <div class="search_field">
-                  <input type="text" class="input" placeholder="Search in your Area">
-                  <i class="fas fa-search"></i>
-              </div>
+
+                <div class="column is-1"></div>
             </div>
-        </div>  
-        </p>
-      </div>
-    </div>
-    </nav>
-    </div>
-  </section>
-<!-- Colin -------------------------------------------------------------------------------------->
-<!-- Hero and search ENDS------------------------------------------------------------------------>
+        </div>
+    </section>    
+    <br>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-<!-- michael -->
-<!-- first row, widget space -->
-
- <div class="columns">
-     <div class="column is-1"></div>
-     <div class="column is-5 widget">
-        <h1 style="text-align: center;">location input</h1>
-     </div>
-     <div class="column is-5 widget">
-        <h1 style="text-align: center;">widget area</h1>
-     </div>
-     <div class="column is-1"></div>
- </div>
- <br>
 <!-- michael -->
 <!-- second row, information boxes -->
 
@@ -223,6 +81,7 @@
         <h1 style="text-align: center;">News</h1> <br>
         <h2 style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
     </div>
+
     <div class="is-1"></div>
  </div>
 <!-- michael -->
@@ -247,10 +106,11 @@
  <!-- footer -->
 
  <div class="columns">
-    <div class="column is-12 footer">
-        <h1>Footer</h1>
+
+    <div class="column is-12 footr">
+        <h1 class=foot>Footer</h1>
     </div>
- </div>
+</div>
 <!-- /michael 58-->
 
 

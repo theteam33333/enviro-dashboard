@@ -1,3 +1,12 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
 body {
     background-color: #ADE8F4;
 }
@@ -26,7 +35,8 @@ body {
 }
 
 .footr {
-    margin-top: 10px;
+    margin-top: 12px;
+    margin-bottom: -12px;
 }
 
 .headr {
@@ -55,7 +65,8 @@ body {
 
 .infoBox {
     border: solid black 2px;
-    margin-left: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .hero-body {
@@ -72,24 +83,10 @@ body {
 /* THIS IS THE START OF THE STYLE FOR THE SEARCH INPUT FORM -------------------------------------------------------------------------------------------*/
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
-  list-style: none;
-  font-family: 'Montserrat', sans-serif;
-}
-
-body{
-  background: #e4eefa;
-}
-
 .wrapper{
-  position: absolute;
+  /*position: absolute;*/
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
 }
 
 .wrapper .search_box{

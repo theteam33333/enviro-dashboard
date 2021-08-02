@@ -189,6 +189,49 @@ const carbonFoot = [
   },
 ];
 
+const deforestation = [
+  {
+    question: "How do plants affect carbon dioxide levels in the atmosphere?",
+    choices: { 1: "THEY REDUCE THEM", 2: "THEY INCREASE THEM", 3: "THEY MAKE NO DIFFERENCE", 4: "NONE OF THE ABOVE" },
+    answer: "1",
+    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+  },
+  {
+    question: "Cutting trees on large scale is called_______?",
+    choices: {
+      1: "DEFORESTATION",
+      2: "REFORESTATION",
+      3: "AFFORESTATION",
+      4: "NONE OF THE ABOVE",
+    },
+    answer: "3",
+    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+  },
+  {
+    question: "Soil erosion is prevented by_________?",
+    choices: {
+      1: "DEFORESTATION",
+      2: "AFFORESTION",
+      3: "OVERGRAZING",
+      4: "NONE OF THE ABOVE",
+    },
+    answer: "1",
+    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+  },
+  {
+    question:
+      "Which gas is likely to reduce from atmosphere by deforestation?",
+    choices: {
+      1: "CARBON DIOXIDE",
+      2: "NITROGEN",
+      3: "OXYGEN",
+      4: "SULPHUR DIOXIDE",
+    },
+    answer: "3",
+    img: "https://image.shutterstock.com/image-vector/landscape-photo-image-picture-placeholder-600w-272872412.jpg"
+  },
+];
+
 
 display();
 

@@ -122,12 +122,12 @@ const global = [
     img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
   },
   {
-    question: "How can we stop global warming",
+    question: "How can we stop global warming?",
     choices: {
       1: "BY TURNING THE LIGHTS ON WHEN NOT IN USE",
       2: "BY RECYCLING PLASTICS",
       3: "BURNING FOSSIL FUELS",
-      4: "I CAN'T BE STOPPED",
+      4: "IT CAN'T BE STOPPED",
     },
     answer: "2",
     img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
@@ -158,7 +158,7 @@ const carbonFoot = [
     choices: {
       1: "IT'S GREEN",
       2: "IT MAKES A LOT OF NOISE",
-      3: "IT BURNS FOSSIL FUELS",
+      3: "IT BURNS FOSSIL FUEL",
       4: "IT HAS RED COLOR",
     },
     answer: "3",
@@ -205,7 +205,7 @@ const deforestation = [
       3: "AFFORESTATION",
       4: "NONE OF THE ABOVE",
     },
-    answer: "3",
+    answer: "1",
     img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
   },
   {
@@ -216,7 +216,7 @@ const deforestation = [
       3: "OVERGRAZING",
       4: "NONE OF THE ABOVE",
     },
-    answer: "1",
+    answer: "2",
     img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
   },
   {

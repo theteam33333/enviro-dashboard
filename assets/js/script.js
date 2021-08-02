@@ -103,6 +103,48 @@ const ozone = [
   },
 ];
 
+const global = [
+  {
+    question: "How could global warming affect polar regions?",
+    choices: { 1: "IT WILL MAKE THEM WARMER", 2: "IT WILL MAKE THEM COLDER", 3: "IT WON'T AFFECT THEM", 4: "IT WILL RESULT IN EXPANSION OF AREA" },
+    answer: "1",
+    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+  },
+  {
+    question: "Which of the following types of sources of energy do not produce carbon di-oxide?",
+    choices: {
+      1: "WIND ENERGY",
+      2: "SOLAR ENERGY",
+      3: "TIDAL ENERGY",
+      4: "ALL OF THE ABOVE",
+    },
+    answer: "4",
+    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+  },
+  {
+    question: "How can we stop global warming",
+    choices: {
+      1: "BY TURNING THE LIGHTS ON WHEN NOT IN USE",
+      2: "BY RECYCLING PLASTICS",
+      3: "BURNING FOSSIL FUELS",
+      4: "I CAN'T BE STOPPED",
+    },
+    answer: "2",
+    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+  },
+  {
+    question:
+      "Who measures the global warming rate?",
+    choices: {
+      1: "ASTROLOGERS",
+      2: "PHYSICISTS",
+      3: "PHILOSOPHERS",
+      4: "CLIMATOLOGIST",
+    },
+    answer: "4",
+    img: "https://image.shutterstock.com/image-vector/landscape-photo-image-picture-placeholder-600w-272872412.jpg"
+  },
+];
 
 
 

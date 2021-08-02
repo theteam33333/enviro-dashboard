@@ -147,6 +147,7 @@ const global = [
 ];
 
 
+
 const deforestation = [
   {
     question: "How do plants affect carbon dioxide levels in the atmosphere?",
@@ -189,6 +190,7 @@ const deforestation = [
     img: "https://image.shutterstock.com/image-vector/landscape-photo-image-picture-placeholder-600w-272872412.jpg"
   },
 ];
+
 
 
 display();

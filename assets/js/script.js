@@ -12,6 +12,48 @@ let scoreListEl = document.querySelector("#scoreList");
 
 let isQuizDone = true;
 
+const greenEmission = [
+  {
+    question: "Which of the following is a greenhouse gas?",
+    choices: { 1: "CARBON DIOXIDE", 2: "METHANE", 3: "WATER VAPOUR", 4: "ALL OF THE ABOVE" },
+    answer: "4",
+    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+  },
+  {
+    question: "Which of the following are consequences associated with climate change?",
+    choices: {
+      1: "THE ICE SHEETS ARE DECLINING, GLACIERS ARE IN RETREAT GLOBALLY.",
+      2: "SURFACE TEMPRATURES ARE SETTING NEW HEAT RECORDS ABOUT EACH YEAR.",
+      3: "MORE EXTREME WEATHER LIKE DROUGHTS, HEAT WAVES AND HURRICANES.",
+      4: "ALL OF THE ABOVE.",
+    },
+    answer: "4",
+    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+  },
+  {
+    question: "Scientists argue that the concentration of greenhouse gases in the atmosphere is:",
+    choices: {
+      1: "GRADUALLY INCREASING",
+      2: "GRADUALLY DECREASING",
+      3: "RAPIDLY INCREASING",
+      4: "RAPIDLY DECREASING",
+    },
+    answer: "1",
+    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+  },
+  {
+    question:
+      " Which One of the Following Is Not a Greenhouse Gas?",
+    choices: {
+      1: "METHANE",
+      2: "HYDROGEN",
+      3: "NITROUS OXIDE",
+      4: "OZONE",
+    },
+    answer: "2",
+    img: "https://image.shutterstock.com/image-vector/landscape-photo-image-picture-placeholder-600w-272872412.jpg"
+  },
+];
 
 
 

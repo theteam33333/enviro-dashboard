@@ -17,6 +17,9 @@ fetch(airPollutionUrl + cityName + "/?token=" + apiKey)
 })
 }
 function displayPollution(pollutionData){
+
+    // clear out the previous data
+    pollutionEl.empty();
     const cityNameEl = $("<div>");
     const aqiEl = $("<div>");
     const airQualityEl = $("<div>");
@@ -77,7 +80,7 @@ var searchCityEl = $("#searchCity");
 
 searchCityEl.click(function() {
     var inputEl = $("#cityName");
-    cityName = inputEl.val();
+    cityName = inputEl.val().toUpperCase();
     console.log("City name is = ", cityName);
     getPollutionData(cityName);
 })

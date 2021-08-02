@@ -186,3 +186,14 @@ body {
 }
 /* Colin */
 /* THE STYLE FOR THE SEARCH INPUT FORM ENDS HERE-------------------------------------------------------------------------------------------*/
+
+/* Styling for Pollution Widget */
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+/* Styling for Pollution Widget ends */

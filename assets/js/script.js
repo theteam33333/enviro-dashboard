@@ -30,7 +30,7 @@ function display() {
   startBtn.innerHTML = "Start Quiz";
   startBtn.type = "button";
   startBtn.name = "startBtn";
-  startBtn.style.textAlign = "center";
+
 
 
   startBtn.addEventListener("click", displayQuestions);
@@ -40,11 +40,9 @@ function display() {
   initialEl.appendChild(startBtn);
 }
 
-
 const lastQuestion = random.length - 1;
 let questionsCtr = 0;
 let correctNum = 0;
-
 
 function displayQuestions() {
 
@@ -65,6 +63,7 @@ function displayQuestions() {
 
   output.push(
     `   <div id="questions"><h2> ${question.question} </h2></div>
+        <br>
         <div id="choices"> ${choices.join("")} </div>
       `
   );
@@ -109,7 +108,7 @@ function showScore(correctNum) {
   scoreH1El.innerHTML = "All done!";
 
   let scoreResult = document.createElement("p");
-  scoreResult.textContent = `Your final score is: ${correctNum}`;
+  scoreResult.textContent = `Your final score is: ${correctNum * 10} out of 50`;
 
   let nameLabel = document.createElement("span");
   nameLabel.textContent = "Enter your NAME: ";

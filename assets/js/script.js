@@ -146,48 +146,6 @@ const global = [
   },
 ];
 
-const carbonFoot = [
-  {
-    question: "Why does too much carbon dioxide in the atmosphere cause climate change?",
-    choices: { 1: "IT COOLS OUR PLANET", 2: "IT BLOCKS OUT UV RAYS", 3: "IT TRAPS HEAT AND WARMS UP OUR PLANET", 4: "IT LETS SUNLIGHT ESCAPE" },
-    answer: "3",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
-  },
-  {
-    question: "Farmer's tractor adds to the carbon footprint of food because___________?",
-    choices: {
-      1: "IT'S GREEN",
-      2: "IT MAKES A LOT OF NOISE",
-      3: "IT BURNS FOSSIL FUELS",
-      4: "NONE OF THE ABOVE",
-    },
-    answer: "3",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
-  },
-  {
-    question: "Which of these choices in transportation produces less greenhouse gas than the others?",
-    choices: {
-      1: "WALKING",
-      2: "RIDING A BUS",
-      3: "RIDING A CAR",
-      4: "TAKING A TRAIN",
-    },
-    answer: "1",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
-  },
-  {
-    question:
-      "Which of the following foods takes the least energy to produce?",
-    choices: {
-      1: "MEAT",
-      2: "BREAD",
-      3: "FRESH VEGETABLES",
-      4: "CEREAL",
-    },
-    answer: "3",
-    img: "https://image.shutterstock.com/image-vector/landscape-photo-image-picture-placeholder-600w-272872412.jpg"
-  },
-];
 
 const deforestation = [
   {

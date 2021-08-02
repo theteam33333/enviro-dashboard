@@ -146,6 +146,48 @@ const global = [
   },
 ];
 
+const carbonFoot = [
+  {
+    question: "Which of the following will result in carbon footprint reduction?",
+    choices: { 1: "BURNING FOSSIL FUELS", 2: "TAKING LONG SHOWERS", 3: "TURNING ON LIGHTS WHEN NOT IN USE", 4: "AFFORESTATION" },
+    answer: "4",
+    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+  },
+  {
+    question: "Farmer's tractor adds to the carbon footprint of food because___________?",
+    choices: {
+      1: "IT'S GREEN",
+      2: "IT MAKES A LOT OF NOISE",
+      3: "IT BURNS FOSSIL FUELS",
+      4: "IT HAS RED COLOR",
+    },
+    answer: "3",
+    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+  },
+  {
+    question: "Which of these choices in transportation produces less greenhouse gas than the others?",
+    choices: {
+      1: "WALKING",
+      2: "RIDING A BUS",
+      3: "RIDING A CAR",
+      4: "TAKING A TRAIN",
+    },
+    answer: "1",
+    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+  },
+  {
+    question:
+      "The total set of carbon emissions caused by an individual is called?",
+    choices: {
+      1: "CARBON CYCLE",
+      2: "CARBON HANDOUT",
+      3: "CARBON FOOTPRINT",
+      4: "CARBON SUMMARY",
+    },
+    answer: "3",
+    img: "https://image.shutterstock.com/image-vector/landscape-photo-image-picture-placeholder-600w-272872412.jpg"
+  },
+];
 
 
 const deforestation = [
@@ -193,6 +235,8 @@ const deforestation = [
 
 
 
+
+
 display();
 
 function display() {
@@ -215,6 +259,23 @@ function display() {
   initialEl.appendChild(paraScreen);
   initialEl.appendChild(startBtn);
 }
+
+
+let random = [];
+
+
+random.push(greenEmission[(Math.floor(Math.random() * 4))])
+random.push(ozone[(Math.floor(Math.random() * 4))])
+random.push(global[(Math.floor(Math.random() * 4))])
+random.push(carbonFoot[(Math.floor(Math.random() * 4))])
+random.push(deforestation[(Math.floor(Math.random() * 4))])
+
+ScoreEl.addEventListener('click', viewScore);
+headerEl.appendChild(ScoreEl);
+
+
+let submitScore = document.createElement("button");
+submitScore.textContent = "Submit";
 
 const lastQuestion = random.length - 1;
 let questionsCtr = 0;

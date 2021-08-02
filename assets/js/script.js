@@ -56,53 +56,6 @@ const greenEmission = [
 ];
 
 
-const ozone = [
-  {
-    question: "What do chlorofluorocarbons (CFCs) do?",
-    choices: {
-      1: "CREATE MORE CARBON DIOXIDE",
-      2: "DESTROY OZONE",
-      3: "CREATE MORE OXYGEN",
-      4: "NONE OF THE ABOVE",
-    },
-    answer: "2",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
-  },
-  {
-    question: "Where do CFCs come from?",
-    choices: {
-      1: "BURNING FOSSIL FUELS",
-      2: "DEFORESTATION",
-      3: "AEROSOLS AND FRIDGES",
-      4: "SUN",
-    },
-    answer: "3",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
-  },
-  {
-    question: "What is an ozone molecule formed from?",
-    choices: {
-      1: "3 OXYGEN ATOMS",
-      2: "3 CARBON DIOXIDE MOLECULES",
-      3: "2 OXYGEN ATOMS",
-      4: "1 HYDROGEN AND 1 OXYGEN ATOM ",
-    },
-    answer: "1",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
-  },
-  {
-    question:
-      "In which sphere Ozone layer depletion is found?",
-    choices: {
-      1: "IONOSPHERE",
-      2: "STRATOSPHERE",
-      3: "LITHOSPHERE",
-      4: "NONE OF ABOVE",
-    },
-    answer: "2",
-    img: "https://image.shutterstock.com/image-vector/landscape-photo-image-picture-placeholder-600w-272872412.jpg"
-  },
-];
 
 
 

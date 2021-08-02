@@ -1,3 +1,4 @@
+//quiz code start
 let containerEl = document.querySelector("#container");
 let headerEl = document.querySelector(".header");
 let ScoreEl = document.querySelector(".score");
@@ -457,7 +458,7 @@ function goBackToHome() {
 }
 
 submitScore.addEventListener("click", saveScore);
-
+//quiz code ends
 
 
 

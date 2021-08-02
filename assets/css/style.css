@@ -186,6 +186,13 @@ body {
 }
 /* Colin */
 /* THE STYLE FOR THE SEARCH INPUT FORM ENDS HERE-------------------------------------------------------------------------------------------*/
+<<<<<<< HEAD
+/*quiz code start*/
+#quizBox{
+  border: solid 2px black;
+}
+/*quiz code ends*/
+=======
 
 /* Styling for Pollution Widget */
 .center {
@@ -197,3 +204,4 @@ body {
 }
 
 /* Styling for Pollution Widget ends */
+>>>>>>> aac67c49a59f6641735fdb0972cd08385698477d

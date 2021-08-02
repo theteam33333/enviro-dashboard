@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //quiz code start
 let containerEl = document.querySelector("#container");
 let headerEl = document.querySelector(".header");
@@ -299,7 +298,6 @@ function displayQuestions() {
         `
     );
   }
-=======
 // fetch ("https://api.climateclock.world/v1/clock") 
 fetch ("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c12-3fa4-4b07-a5fa-72ff409c8dc3")
 
@@ -321,7 +319,6 @@ fetch ("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864
     climateClockEl.appendChild(aEl);
   });
 
->>>>>>> aac67c49a59f6641735fdb0972cd08385698477d
 
   output.push(
     `   <div id="questions"><h2> ${question.question} </h2></div>

@@ -186,3 +186,7 @@ body {
 }
 /* Colin */
 /* THE STYLE FOR THE SEARCH INPUT FORM ENDS HERE-------------------------------------------------------------------------------------------*/
+
+#quizBox{
+  border: solid 2px black;
+}

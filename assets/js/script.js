@@ -1,27 +1,24 @@
-<<<<<<< HEAD
-=======
 // Guardian climate article api start
 // Retrieve ten climate change article links from the Guardian api
-fetch ("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c12-3fa4-4b07-a5fa-72ff409c8dc3")
+fetch("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c12-3fa4-4b07-a5fa-72ff409c8dc3")
   //Convert to JSON
-  .then (function(res) {
+  .then(function (res) {
     return res.json();
   })
   // Extract article title and url from the dataset
-  .then (function(data) {
+  .then(function (data) {
     console.log("Guardian api data", data);
     var climateArticleEl = document.querySelector('.climateArticles');
     var webTitle = (data.response.results[0].webTitle);
     var webUrl = (data.response.results[0].webUrl);
     //var buttonEl = document.createElement("button");
     var aEl = document.createElement("a");
-    aEl.href=webUrl;
-    aEl.innerHTML=webTitle;
+    aEl.href = webUrl;
+    aEl.innerHTML = webTitle;
     climateArticleEl.appendChild(aEl);
   });
 // Guardian climate article api finish
 
->>>>>>> 6b503880bbd8ec94e347d8344d308080f2caeae4
 //quiz code start
 let containerEl = document.querySelector("#container");
 let headerEl = document.querySelector(".header");
@@ -322,7 +319,6 @@ function displayQuestions() {
         `
     );
   }
-<<<<<<< HEAD
   // fetch ("https://api.climateclock.world/v1/clock") 
   fetch("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c12-3fa4-4b07-a5fa-72ff409c8dc3")
 
@@ -343,8 +339,6 @@ function displayQuestions() {
       //buttonEl.textContent = aEl;
       climateClockEl.appendChild(aEl);
     });
-=======
->>>>>>> 6b503880bbd8ec94e347d8344d308080f2caeae4
 
 
   output.push(
@@ -529,7 +523,6 @@ function getPollutionData(cityName) {
       displayPollution(pollutionData);
     })
 }
-<<<<<<< HEAD
 function displayPollution(pollutionData) {
 
   // clear out the previous data
@@ -586,12 +579,11 @@ function displayPollution(pollutionData) {
   pollutionEl.append(pm10El);
   pollutionEl.append(ozoneEl);
   pollutionEl.append(uviEl);
-=======
-function displayPollution(pollutionData){
+  function displayPollution(pollutionData) {
 
     // clear out the previous data
     pollutionEl.empty();
-    
+
     const cityNameEl = $("<div>");
     const aqiEl = $("<div>");
     const airQualityEl = $("<div>");
@@ -609,26 +601,26 @@ function displayPollution(pollutionData){
     console.log("pm25=", pm25);
     cityNameEl.text(cityName + " Air Quality");
     if (aqi < 51) {
-        airQuality = "Good";
-        cityNameEl.addClass("green");
-        aqiEl.addClass("green");
-        airQualityEl.addClass("green");
+      airQuality = "Good";
+      cityNameEl.addClass("green");
+      aqiEl.addClass("green");
+      airQualityEl.addClass("green");
     }
     else if (aqi > 50 && aqi < 101) {
-        airQuality = "Moderate"
-        aqiEl.addClass("yellow");
+      airQuality = "Moderate"
+      aqiEl.addClass("yellow");
     }
-    else if (aqi > 100 && aqi < 151){
-        airQuality = "Unhealthy";
-        aqiEl.addClass("orange");
+    else if (aqi > 100 && aqi < 151) {
+      airQuality = "Unhealthy";
+      aqiEl.addClass("orange");
     }
     else if (aqi > 150) {
-        airQuality = "Hazardous";
-        aqiEl.addClass("red");
+      airQuality = "Hazardous";
+      aqiEl.addClass("red");
     }
 
     // Fill the data 
-    
+
     aqiEl.text(aqi);
     airQualityEl.text(airQuality);
     pm25El.text("PM2.5 " + pm25);
@@ -644,31 +636,22 @@ function displayPollution(pollutionData){
     pollutionEl.append(pm10El);
     pollutionEl.append(ozoneEl);
     pollutionEl.append(uviEl);
->>>>>>> 6b503880bbd8ec94e347d8344d308080f2caeae4
 
-}
+  }
 
-// Click the Search button
-var searchCityEl = $("#searchCity");
+  // Click the Search button
+  var searchCityEl = $("#searchCity");
 
-<<<<<<< HEAD
-searchCityEl.click(function () {
-  var inputEl = $("#cityName");
-  cityName = inputEl.val().toUpperCase();
-  console.log("City name is = ", cityName);
-  getPollutionData(cityName);
-=======
-searchCityEl.click(function() {
+  searchCityEl.click(function () {
     var inputEl = $("#cityName");
     console.log("city name is ", cityName);
     cityName = inputEl.val().toUpperCase();
     console.log("City name is = ", cityName);
     getPollutionData(cityName);
->>>>>>> 6b503880bbd8ec94e347d8344d308080f2caeae4
-})
+  })
 
 
-//  Code for Pollution Widget ends
+  //  Code for Pollution Widget ends
 
 
 
@@ -760,23 +743,23 @@ searchCityEl.click(function() {
 
 
 
-
-
-
-// Colin -------------------------------------------------------------------------------------------//
-// THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM STARTS HERE-------------------------------------------------------------------------------------------//
-
-$(".default_option").click(function () {
-  $(".dropdown ul").addClass("active");
-});
-
-$(".dropdown ul li").click(function () {
-  var text = $(this).text();
-  $(".default_option").text(text);
-  $(".dropdown ul").removeClass("active");
-});
 
 
 
   // Colin -------------------------------------------------------------------------------------------//
-//  THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM ENDS -------------------------------------------------------------------------------------------//
+  // THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM STARTS HERE-------------------------------------------------------------------------------------------//
+
+  $(".default_option").click(function () {
+    $(".dropdown ul").addClass("active");
+  });
+
+  $(".dropdown ul li").click(function () {
+    var text = $(this).text();
+    $(".default_option").text(text);
+    $(".dropdown ul").removeClass("active");
+  });
+
+
+}
+  // Colin -------------------------------------------------------------------------------------------//
+//  THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM ENDS -------------------------------------------------------------------------------------------

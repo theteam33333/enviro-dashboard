@@ -507,6 +507,7 @@ function displayPollution(pollutionData){
 
     // clear out the previous data
     pollutionEl.empty();
+    
     const cityNameEl = $("<div>");
     const aqiEl = $("<div>");
     const airQualityEl = $("<div>");
@@ -519,7 +520,7 @@ function displayPollution(pollutionData){
     pm25 = pollutionData.data.forecast.daily.pm25[2].avg;
     pm10 = pollutionData.data.forecast.daily.pm10[2].avg;
     uvi = pollutionData.data.forecast.daily.uvi[2].avg;
-    ozone = pollutionData.data.forecast.daily.o3[2].avg;
+    oozone = pollutionData.data.forecast.daily.o3[2].avg;
 
     console.log("pm25=", pm25);
     cityNameEl.text(cityName + " Air Quality");
@@ -548,7 +549,7 @@ function displayPollution(pollutionData){
     airQualityEl.text(airQuality);
     pm25El.text("PM2.5 " + pm25);
     pm10El.text("PM10 " + pm10);
-    ozoneEl.text("O3 " + ozone);
+    ozoneEl.text("O3 " + oozone);
     uviEl.text("UVI " + uvi);
 
     //  Append the elements
@@ -567,6 +568,7 @@ var searchCityEl = $("#searchCity");
 
 searchCityEl.click(function() {
     var inputEl = $("#cityName");
+    console.log("city name is ", cityName);
     cityName = inputEl.val().toUpperCase();
     console.log("City name is = ", cityName);
     getPollutionData(cityName);

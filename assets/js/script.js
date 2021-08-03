@@ -650,7 +650,6 @@ searchCityEl.click(function() {
 
 
 
-<<<<<<< HEAD
 // Colin -------------------------------------------------------------------------------------------//
 // THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM STARTS HERE-------------------------------------------------------------------------------------------//
 $(document).ready(function(){
@@ -663,45 +662,5 @@ $(document).ready(function(){
     $(".dropdown ul").removeClass("active");
   });
 });
-
-     
-  
-=======
-
-
-
-
-
-
->>>>>>> 6b503880bbd8ec94e347d8344d308080f2caeae4
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Colin -------------------------------------------------------------------------------------------//
-// THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM STARTS HERE-------------------------------------------------------------------------------------------//
-
-$(".default_option").click(function () {
-  $(".dropdown ul").addClass("active");
-});
-
-$(".dropdown ul li").click(function () {
-  var text = $(this).text();
-  $(".default_option").text(text);
-  $(".dropdown ul").removeClass("active");
-});
-
-
-
-  // Colin -------------------------------------------------------------------------------------------//
 //  THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM ENDS -------------------------------------------------------------------------------------------//

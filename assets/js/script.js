@@ -506,6 +506,7 @@ function displayPollution(pollutionData){
 
     // clear out the previous data
     pollutionEl.empty();
+    
     const cityNameEl = $("<div>");
     const aqiEl = $("<div>");
     const airQualityEl = $("<div>");

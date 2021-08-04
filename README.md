@@ -13,7 +13,7 @@ An input search field
 * [HTML](#HTML)
 * [CSS](#CSS)
 * [JavaScript](#JavaScript)
-* [BULMA](#BULMA Framework)
+* [BULMA](#BULMAFramework)
 * [HTML](#JQuery)
 
 

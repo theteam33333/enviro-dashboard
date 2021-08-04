@@ -9,15 +9,21 @@ fetch ("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864
   .then (function(data) {
     console.log("Guardian api data", data);
     var climateArticleEl = document.querySelector('.climateArticles');
-    var webTitle = (data.response.results[0].webTitle);
-    var webUrl = (data.response.results[0].webUrl);
-    //var buttonEl = document.createElement("button");
-    var aEl = document.createElement("a");
-    aEl.href=webUrl;
-    aEl.innerHTML=webTitle;
-    climateArticleEl.appendChild(aEl);
+    climateArticleEl.classList.add("guardian");
+    var webTitle;
+    var webUrl;
+    for (let i=0; i < 5; i++) {
+      webTitle = (data.response.results[i].webTitle);
+      webUrl = (data.response.results[i].webUrl);
+      //var buttonEl = document.createElement("button");
+      var aEl = document.createElement("a");
+      aEl.href=webUrl;
+      aEl.innerHTML=webTitle;
+      climateArticleEl.appendChild(aEl);
+    }
   });
 // Guardian climate article api finish
+
 
 //quiz code start
 let containerEl = document.querySelector("#container");
@@ -321,6 +327,7 @@ function displayQuestions() {
   }
 
 
+
   output.push(
     `   <div id="questions"><h2> ${question.question} </h2></div>
         <br>
@@ -494,20 +501,29 @@ var apiKey='936da452efddec94d3bf53bc5ce3701728278b67 '
 var airPollutionUrl = 'https://api.waqi.info/feed/'
 
 function getPollutionData(cityName) {
-fetch(airPollutionUrl + cityName + "/?token=" + apiKey)
+ fetch(airPollutionUrl + cityName + "/?token=" + apiKey)
+// fetch(airPollutionUrl + "xyz" + "/?token=" + apiKey)
 .then(function(response){
-    return response.json();
-})
+    return response.json()
 .then(function(pollutionData){
     console.log("pollutionData= ", pollutionData);
+    const {status, data} = pollutionData;
+    console.log("status=", status, "data=", data);
+
     displayPollution(pollutionData);
 })
+.catch(function(error){
+  console.log("Something is wrong");
+}) 
+});
 }
+
 function displayPollution(pollutionData){
 
     // clear out the previous data
     pollutionEl.empty();
     
+    const cityAirQualityEl = $("<div>");
     const cityNameEl = $("<div>");
     const aqiEl = $("<div>");
     const airQualityEl = $("<div>");
@@ -533,16 +549,22 @@ function displayPollution(pollutionData){
     else if (aqi > 50 && aqi < 101) {
         airQuality = "Moderate"
         aqiEl.addClass("yellow");
+        cityNameEl.addClass("yellow");
+        airQualityEl.addClass("yellow");
     }
     else if (aqi > 100 && aqi < 151){
         airQuality = "Unhealthy";
         aqiEl.addClass("orange");
+        cityNameEl.addClass("orange");
+        airQualityEl.addClass("orange");
     }
     else if (aqi > 150) {
         airQuality = "Hazardous";
         aqiEl.addClass("red");
+        cityNameEl.addClass("red");
+        airQualityEl.addClass("red");
     }
-
+    cityAirQualityEl.addClass("airQuality");
     // Fill the data 
     
     aqiEl.text(aqi);
@@ -553,9 +575,10 @@ function displayPollution(pollutionData){
     uviEl.text("UVI " + uvi);
 
     //  Append the elements
-    pollutionEl.append(cityNameEl);
-    pollutionEl.append(aqiEl);
-    pollutionEl.append(airQualityEl);
+    cityAirQualityEl.append(cityNameEl);
+    cityAirQualityEl.append(aqiEl);
+    cityAirQualityEl.append(airQualityEl);
+    pollutionEl.append(cityAirQualityEl);
     pollutionEl.append(pm25El);
     pollutionEl.append(pm10El);
     pollutionEl.append(ozoneEl);
@@ -568,7 +591,6 @@ var searchCityEl = $("#searchCity");
 
 searchCityEl.click(function() {
     var inputEl = $("#cityName");
-    console.log("city name is ", cityName);
     cityName = inputEl.val().toUpperCase();
     console.log("City name is = ", cityName);
     getPollutionData(cityName);

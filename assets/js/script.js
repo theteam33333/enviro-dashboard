@@ -17,9 +17,11 @@ fetch ("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864
       webUrl = (data.response.results[i].webUrl);
       //var buttonEl = document.createElement("button");
       var aEl = document.createElement("a");
+      var aBr = document.createElement("br");
       aEl.href=webUrl;
       aEl.innerHTML=webTitle;
       climateArticleEl.appendChild(aEl);
+      climateArticleEl.appendChild(aBr);
     }
   });
 // Guardian climate article api finish

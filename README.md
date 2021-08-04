@@ -1,7 +1,7 @@
 # enviro-dashboard
 
 
-This webpage provides information about the effects of climate change in the world. The user will enter the name of their city in the search field. After clicking the submit button the user will be prsented with relevant climate infomation in the form of news clips and widget. The user can also interact with a simple quiz with ramdomly genarated questions about climate change, to test their current knowledge of the subject. The usere can take the quiz as many times as possible.
+This webpage provides information about the effects of climate change in the world. The user will enter the name of their city in the search field. After clicking the submit button, the user will be prsented with relevant climate infomation in the form of news clips and widget. The user can also interact with a simple quiz with ramdomly genarated questions about climate change, to test their current knowledge of the subject. The usere can take the quiz as many times as possible.
 
 # Webpage Components
 HTML Skeleton
@@ -10,11 +10,11 @@ A quiz featuring local storage highscore system
 An input search field
 
 # Technologies Used
-HTML
-CSS
-JavaScript
-BULMA Framwork
-Qjuery
+* [HTML](#HTML)
+* [CSS](#CSS)
+* [JavaScript](#JavaScript)
+* [BULMA](#BULMA Framework)
+* [HTML](#JQuery)
 
 
 # URL
@@ -50,10 +50,10 @@ N/A
 MIT
 
 # Credits: 
-Craig Martin
-Colin Nebula
-Harvinder(Harry)Shah
-Micheal Mifsud
+* Craig Martin
+* Colin Nebula
+* Harvinder(Harry)Shah
+* Micheal Mifsud
 
 
 # Contribute:

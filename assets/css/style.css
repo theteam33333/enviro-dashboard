@@ -67,6 +67,9 @@ body {
     border: solid black 2px;
     margin-left: 5px;
     margin-right: 5px;
+    margin-top: 20px;
+    background-color: white;
+    min-height: 400px;
     
 }
 
@@ -87,7 +90,7 @@ body {
 .wrapper{
   /*position: absolute;*/
   top: 50%;
-  left: 50%;
+
 }
 
 .wrapper .search_box{
@@ -226,8 +229,11 @@ body {
 }
 /* Styling for Pollution Widget ends */
 
+
+/* michael - added line to javascript to 
 /* Styling for guardian api starts */
-.guardian {
-  display: flex;
-  flex-direction: column;
+.guardian,
+.climateArticles {
+  padding-left: 20px;
+  text-align: center;
 }

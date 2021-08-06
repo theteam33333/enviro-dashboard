@@ -169,6 +169,18 @@ body {
   justify-content: center;
   text-align: center;
 }
+.box {
+  background-color: rgb(137, 206, 137);
+}
+
+.info-tool {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+}
+.tooltip {
+  margin-left: 5px;
+}
 /* Styling for Pollution Widget ends */
 
 

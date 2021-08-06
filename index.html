@@ -7,12 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enviro Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+
 </head>
 
 <body class="main">
-    <!-- michael -->
+    <!-- Michael code start -->
     <!-- header -->
     <div>
         <div class="columns">
@@ -20,6 +21,10 @@
                 <h1 class="head">The Climate is Changing...</h1>
             </div>
         </div>
+
+        <video playsinline autoplay muted loop poster="" id="bgvid">
+            <source src="./assets/background.mp4" type="video/webm">
+        </video>
         <!-- first row, widget space -->
         <section class="hero is-primary is-medium">
             <div class="hero-body" style="background-image: url(./assets/heroimg.jpg)">
@@ -31,54 +36,47 @@
                         <div class="block">
                             <div class="wrapper">
                                 <div class="search_box">
-                                    <div class="dropdown">
-                                        <div class="default_option">All</div>
-                                        <ul>
-                                            <!--We could remove the dropdown but i is still a nice piece-->
-                                            <li>All</li>
+                                    <!-- Future possible feature -->
+                                    <!-- <div class="dropdown">
+                                        <div class="default_option">All</div> -->
+                                    <!-- <ul> -->
+                                    <!--We could remove the dropdown but i is still a nice piece-->
+                                    <!-- <li>All</li>
                                             <li>Recent</li>
                                             <li>Popular</li>
-                                        </ul>
-                                    </div>
+                                        </ul> -->
+                                    <!-- </div> -->
                                     <div class="search_field">
-                                        <input type="text" class="input" placeholder="Search in your Area">
-                                        <i class="fas fa-search"></i>
+                                        <input type="text" class="input" id="cityName"
+                                            placeholder="Search in your Area">
+                                        <i id="searchCity" class="fas fa-search"></i>
                                     </div>
                                 </div>
-                                <div class="search_field">
-                                    <input type="text" class="input" id="cityName" placeholder="Search in your Area">
-                                    <i class="fas fa-search"></i>
-                                    <!-- button for clicking added -->
-                                    <button id="searchCity">Submit</button>
-                                    <!-- button code ends -->
-                                </div>
+
                             </div>
                         </div>
-                        <div class="block widget">
-                            <h1 style="text-align: center;">widget area</h1>
-                        </div>
-                    </div>
-                    <!-- Code for Pollution Widget -->
-                    <div id="pollution" class="container widget center">
-                        <!-- <h1 style="text-align: center;">widget area</h1> -->
 
+                        <!-- Code for Pollution Widget -->
+                        <div id="pollution" class="container widget center"></div>
+                        <!-- Code for Pollution Widget Ends -->
                     </div>
-                    <!-- Code for Pollution Widget Ends -->
+
+                    <div class="column is-1"></div>
                 </div>
-
-                <div class="column is-1"></div>
             </div>
-    </div>
     </div>
     </section>
     <br>
-    <!-- Craig Climate Clock -->
-    <div class="climateClock"></div>
-
+    <!-- Craig climate api articles -->
+    <div>
+        <div class="climateArticles">
+            <h2>Articles On Climate Change Issues</h2>
+        </div>
+    </div>
     <!-- michael -->
     <!-- second row, information boxes -->
 
-    <div class="columns">
+    <div class="columns iBox is-three-quarters-desktop">
         <div class="column is-1"></div>
         <div class="column is-2 infoBox">
             <h1 style="text-align: center;">Greenhouse Gas</h1> <br>
@@ -115,33 +113,34 @@
 
         <div class="column is-1"></div>
     </div>
+
     <!-- michael -->
     <!-- second row, hero + quiz starter ?-->
 
     <br>
-    <div class="columns">
-        <div class="column is-1"></div>
-        <div class="column is-10 infoBox">
-            <div class="columns">
-                <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In maximus justo et rutrum accumsan.
-                    Nulla facilisi. Praesent gravida iaculis arcu sed accumsan. Aliquam gravida pharetra sem et
-                    cursus. Mauris metus dolor, scelerisque eget neque at, ultricies dictum ex. Aenean iaculis metus
-                    in dui fermentum sodales. Vivamus ac commodo ex. Phasellus semper facilisis efficitur.
-                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                </h1>
-            </div>
-            <div class="columns">
-                <div class="column">
-                    <h1 style="text-align: center;">Click <a>HERE</a> to start the quiz!</h1>
+    <!-- <div class="columns">
+            <div class="column is-1"></div>
+            <div class="column is-10 infoBox">
+                <div class="columns">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In maximus justo et rutrum accumsan.
+                        Nulla facilisi. Praesent gravida iaculis arcu sed accumsan. Aliquam gravida pharetra sem et
+                        cursus. Mauris metus dolor, scelerisque eget neque at, ultricies dictum ex. Aenean iaculis metus
+                        in dui fermentum sodales. Vivamus ac commodo ex. Phasellus semper facilisis efficitur.
+                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                    </h1>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <h1 style="text-align: center;">Click <a>HERE</a> to start the quiz!</h1>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="column is-1"></div>
-    </div>
+            <div class="column is-1"></div>
+        </div> -->
     <!--quiz code start-->
     <section class="columns" id="quizBox">
-        <div class="column is-8">
-            <div class="header">
+        <div class="column">
+            <div class=" header">
                 <div class="score">View Highscore</div>
             </div>
             <div id="container">
@@ -164,9 +163,10 @@
     <div class="columns">
 
         <div class="column is-12 footr">
-            <h1 class=foot>Footer</h1>
+            <h1 class=foot style="text-align: center;">Made by Team 3</h1>
         </div>
     </div>
+
     <!-- /michael 58-->
 
 
@@ -455,7 +455,7 @@
 
 
 
-    git commit -m
+
 
 
 

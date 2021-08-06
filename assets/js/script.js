@@ -638,14 +638,15 @@ function displayPollution(pollutionData){
 var searchCityEl = $("#searchCity");
 
 
-// $("#cityName").keypress(function(e){
-    
-//     var inputEl = $("#cityName");
-//     cityName = inputEl.val().toUpperCase();
-//     console.log("City name is = ", cityName);
-//     getPollutionData(cityName);
-    
-// })
+$("#cityName").keypress(function(e){
+    if(e.keyCode === 13){
+    var inputEl = $("#cityName");
+    cityName = inputEl.val().toUpperCase();
+    console.log("City name is = ", cityName);
+    getPollutionData(cityName);
+    e.preventDefault();
+    }
+})
 
 searchCityEl.click(function() {
     var inputEl = $("#cityName");

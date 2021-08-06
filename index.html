@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enviro Dashboard</title>
+    <title>The EnviroDashboard</title>
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 </head>
@@ -14,63 +14,133 @@
 <body class="main">
     <!-- Michael code start -->
     <!-- header -->
-    <div>
-        <div class="columns">
-            <div class="column is-12 headr">
-                <h1 class="head">The Climate is Changing...</h1>
-            </div>
-        </div>
-        <!-- first row, widget space -->
-        <section class="hero is-primary is-medium">
-            <div class="hero-body" style="background-image: url(./assets/heroimg.jpg)">
-                <div class="columns" id="heroRow">
-                    <div class="column is-1"></div>
-                    <div class="column is-5"></div>
+    <nav class="navbar is-link" role="navigation" aria-label="main navigation" id="navbar">
+  <div class="navbar-brand">
+    <a class="navbar-item">
+        <strong>The EnviroDashboard</strong>
 
-                    <div class="column is-5">
-                        <div class="block">
-                            <div class="wrapper">
-                                <div class="search_box">
-                                    <!-- Future possible feature -->
-                                    <!-- <div class="dropdown">
-                                        <div class="default_option">All</div> -->
-                                        <!-- <ul> -->
-                                            <!--We could remove the dropdown but i is still a nice piece-->
-                                            <!-- <li>All</li>
-                                            <li>Recent</li>
-                                            <li>Popular</li>
-                                        </ul> -->
-                                    <!-- </div> -->
-                                    <div class="search_field">
-                                        <input type="text" class="input" id="cityName" placeholder="Search in your Area">
-                                        <i id="searchCity" class="fas fa-search"></i>
+    <!-- LOGO GOES HERE 
+      <img src="" width="112" height="28">
+    </a> 
+    /LOGO-->
+
+
+    <!-- burger currently does not function https://adminhacks.com/bulma-burger-interactive.html -->
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="#navbar">
+        Home
+      </a>
+
+      <a class="navbar-item" href="#hero">
+        Test Your City
+      </a>
+      <a class="navbar-item" href="#articles">
+        In The News
+      </a>
+      <a class="navbar-item" href="#iBox">
+        Key Topics
+      </a>
+
+      <!--concept dropdown box-->
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            About
+          </a>
+          <a class="navbar-item">
+            Resources
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Report an issue
+          </a>
+        </div>
+      </div>
+      <div class="navbar-item subtitle">
+          The Climate is Changing... Find out How
+      </div>
+
+      <!--concept dropdown box-->
+
+    </div>
+
+    <div class="navbar-end">
+          <a class="navbar-item" href="#contact">
+            Contact Us
+          </a>
+    </div>
+  </div>
+</nav>
+        <div>
+            <!-- first row, widget space -->
+            <section class="hero is-primary is-medium" id="hero">
+                <div class="hero-body" style="background-image: url(./assets/heroimg.jpg)">
+                    <div class="columns" id="heroRow">
+                        <div class="column is-1"></div>
+                        <div class="column is-5"></div>
+
+                        <div class="column is-5">
+                            <div class="block">
+                                <div class="wrapper">
+                                    <div class="search_box">
+                                        <!-- Future possible feature -->
+                                        <!-- <div class="dropdown">
+                                            <div class="default_option">All</div> -->
+                                            <!-- <ul> -->
+                                                <!--We could remove the dropdown but i is still a nice piece-->
+                                                <!-- <li>All</li>
+                                                <li>Recent</li>
+                                                <li>Popular</li>
+                                            </ul> -->
+                                        <!-- </div> -->
+                                        <div class="search_field">
+                                            <input type="text" class="input" id="cityName" placeholder="Search in your Area">
+                                            <i id="searchCity" class="fas fa-search"></i>
+                                        </div>
                                     </div>
+                                
                                 </div>
-                             
                             </div>
-                        </div>
-                    
-          <!-- Code for Pollution Widget -->
-          <div id="pollution" class="container widget center"></div>
-        <!-- Code for Pollution Widget Ends -->
-                </div>
+                        
+            <!-- Code for Pollution Widget -->
+            <div id="pollution" class="container widget center"></div>
+            <!-- Code for Pollution Widget Ends -->
+                    </div>
 
-                    <div class="column is-1"></div>
+                        <div class="column is-1"></div>
+                    </div>
                 </div>
             </div>
-        </div>
     </section>    
     <br>
 <!-- Craig climate api articles -->
     <div>
-            <div class="climateArticles">
+            <div class="climateArticles" id="articles">
                 <h2>Articles On Climate Change Issues</h2>
             </div>
     </div>
-        <!-- michael -->
-        <!-- second row, information boxes -->
 
- <div class="columns iBox is-three-quarters-desktop">
+<!-- michael -->
+<!-- second row, information boxes -->
+
+
+<!-- consider remaking infoboxes as 'cards' https://bulma.io/documentation/components/card/ -->
+
+ <div class="columns iBox is-three-quarters-desktop" id="iBox">
     <div class="column is-1"></div>
     <div class="column is-2 infoBox">
         <h1 style="text-align: center;">Greenhouse Gas</h1> <br>
@@ -142,320 +212,25 @@
         <!-- quiz code ends -->
         <!-- footer -->
 
-        <div class="columns">
-
-            <div class="column is-12 footr">
-                <h1 class=foot style="text-align: center;">Made by Team 3</h1>
+        <footer class="footer">
+            <div class="content has-text-centered">
+              <p>
+                <strong>The EnviroDashboard</strong> by <a href="mailto:theteam33333@gmail.com"></a><strong>Team 3</strong></a>.
+                <br><br>
+                 Know the Facts
+                <br><br>
+                Contact us by <a href="mailto:theteam33333@gmail.com" id="contact">Email</a>
+              </p>
             </div>
-        </div>
+          </footer>
         <!-- /michael 58-->
-
-<!-- Git test -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- /colin -->
-<!-- craig -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- /craig -->
-<!-- harry -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- /harry -->
-        <!-- sumant -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- /sumant -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="./assets/js/script.js"></script>
 
-        <!-- /Colin ------------------------------------------------------------------------------------>
-        <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-        <!-- /Colin Script ENDS------------------------------------------------------------------------------------>
+<!-- /Colin ------------------------------------------------------------------------------------>
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+<!-- /Colin Script ENDS------------------------------------------------------------------------------------>
 </body>
 
 </html>

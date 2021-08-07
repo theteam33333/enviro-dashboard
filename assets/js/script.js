@@ -1,3 +1,14 @@
+// burger js
+
+const toggleBurger = () => {
+  let burgerIcon = document.getElementById('burger');
+  let dropMenu = document.getElementById('burgerToggle');
+  burgerIcon.classList.toggle('is-active');
+  dropMenu.classList.toggle('is-hidden');
+}
+
+//document.burgerIcon.addEventListener('click', toggleBurger())
+
 // Guardian climate article api start
 // Retrieve ten climate change article links from the Guardian api
 fetch("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c12-3fa4-4b07-a5fa-72ff409c8dc3")

@@ -26,40 +26,58 @@
   <div class="navbar-brand">
     <a class="navbar-item">
         <strong>The EnviroDashboard</strong>
+    </a>
+
+      <div class="navbar-item has-text-white is-hidden-desktop">
+        The Climate is Changing... Find out How
+      </div>
 
     <!-- LOGO GOES HERE 
       <img src="" width="112" height="28">
     </a> 
     /LOGO-->
 
-
-    <!-- burger currently does not function https://adminhacks.com/bulma-burger-interactive.html -->
-
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+    <a role="button" class="navbar-burger burger" id="burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onclick="toggleBurger()">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
+    <div class="navbar-dropdown is-hidden" id="burgerToggle">
+      <a class="navbar-item has-text-white" href="welcome.html">
+        Home
+      </a>
+      <a class="navbar-item has-text-white" href="#hero">
+        Pollution Index
+      </a>
+      <a class="navbar-item has-text-white" href="#articles">
+        Climate News
+      </a>
+      <a class="navbar-item has-text-white" href="#iBox">
+        Key Topics
+      </a>
+      <a class="navbar-item has-text-white" href="#contact">
+        Contact Us
+      </a>
+    </div>
+    
   </div>
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href="#navbar">
+      <a class="navbar-item" href="welcome.html">
         Home
       </a>
-
       <a class="navbar-item" href="#hero">
-        Test Your City
+        Pollution Index
       </a>
       <a class="navbar-item" href="#articles">
-        In The News
+        Climate News
       </a>
       <a class="navbar-item" href="#iBox">
         Key Topics
       </a>
-
-      <div class="navbar-item subtitle">
-          The Climate is Changing... Find out How
+      <div class="navbar-item has-text-white">
+        The Climate is Changing... Find out How
       </div>
 
       <!--concept dropdown box-->
@@ -113,7 +131,7 @@
     <br>
     <!-- climate api articles -->
     
-    <div class="tile is-ancestor">
+    <div class="tile is-ancestor" id="articles">
         <div class="tile is-parent is-3">
         </div>    
         <div class="tile is-parent is-6">
@@ -130,7 +148,7 @@
 <!-- information boxes -->
 
 
-    <div class="tile is-ancestor">
+    <div class="tile is-ancestor" id="iBox">
         <div class="tile is-parent">
 
 
@@ -216,7 +234,7 @@
                 <br><br>
                  Know the Facts
                 <br><br>
-                Contact us by <a href="mailto:theteam33333@gmail.com" id="contact">Email</a>
+                Contact us by email: <a href="mailto:theteam33333@gmail.com" id="contact">theteam33333@gmail.com</a>
               </p>
             </div>
           </footer>

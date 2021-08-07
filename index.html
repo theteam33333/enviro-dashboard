@@ -8,10 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The EnviroDashboard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/bulma-tooltip.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
 </head>
 
 <body class="main">
+  <video playsinline autoplay muted loop poster="" id="bgvid">
+    <source src="./assets/background.mp4" type="video/webm">
+</video>
     <!-- Michael code start -->
     <!-- header -->
     <nav class="navbar is-link" role="navigation" aria-label="main navigation" id="navbar">
@@ -88,47 +92,42 @@
         <div>
             <!-- first row, widget space -->
             <section class="hero is-primary is-medium" id="hero">
-                <div class="hero-body" style="background-image: url(./assets/heroimg.jpg)">
+                <div class="hero-body" style="background-image: url(./assets/images/heroimg.jpg)">
                     <div class="columns" id="heroRow">
-                        <div class="column is-1"></div>
+                        <div class="column is-2"></div>
                         <div class="column is-5"></div>
 
-                        <div class="column is-5">
-                            <div class="block">
-                                <div class="wrapper">
-                                    <div class="search_box">
-                                        <!-- Future possible feature -->
-                                        <!-- <div class="dropdown">
-                                            <div class="default_option">All</div> -->
-                                            <!-- <ul> -->
-                                                <!--We could remove the dropdown but i is still a nice piece-->
-                                                <!-- <li>All</li>
-                                                <li>Recent</li>
-                                                <li>Popular</li>
-                                            </ul> -->
-                                        <!-- </div> -->
-                                        <div class="search_field">
-                                            <input type="text" class="input" id="cityName" placeholder="Search in your Area">
-                                            <i id="searchCity" class="fas fa-search"></i>
+                        <div class="column is-3">
+                            <div class="block center">
+                                <form action="">
+                                    <div class="wrapper">
+                                        <div class="search_box">
+                                            <div class="search_field">
+                                                <input type="text" class="input" id="cityName" onfocus="this.value=''" placeholder="Enter your City">
+                                                <i id="searchCity" class="fas fa-search"></i>
+                                            </div>
                                         </div>
+                                    
                                     </div>
-                                
-                                </div>
+                                </form>
+                               
                             </div>
                         
             <!-- Code for Pollution Widget -->
-            <div id="pollution" class="container widget center"></div>
+            <div class="center">
+                <div id="pollution" class="container box has-background-info widget center">
+                </div>
+            </div>
             <!-- Code for Pollution Widget Ends -->
                     </div>
 
-                        <div class="column is-1"></div>
+                        <div class="column is-2"></div>
                     </div>
                 </div>
             </div>
     </section>    
     <br>
-
-<!-- Craig climate api articles -->
+    <!-- Craig climate api articles -->
     <div>
         <div class="columns">
             <div class="column">
@@ -223,26 +222,6 @@
         <!-- michael -->
         <!-- second row, hero + quiz starter ?-->
 
-        <br>
-        <!-- <div class="columns">
-            <div class="column is-1"></div>
-            <div class="column is-10 infoBox">
-                <div class="columns">
-                    <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In maximus justo et rutrum accumsan.
-                        Nulla facilisi. Praesent gravida iaculis arcu sed accumsan. Aliquam gravida pharetra sem et
-                        cursus. Mauris metus dolor, scelerisque eget neque at, ultricies dictum ex. Aenean iaculis metus
-                        in dui fermentum sodales. Vivamus ac commodo ex. Phasellus semper facilisis efficitur.
-                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                    </h1>
-                </div>
-                <div class="columns">
-                    <div class="column">
-                        <h1 style="text-align: center;">Click <a>HERE</a> to start the quiz!</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-1"></div>
-        </div> -->
         <!--quiz code start-->
         <section class="columns" id="quizBox">
             <div class="column is-8">
@@ -258,13 +237,16 @@
                         <div id="highscore"></div>
                     </div>
 
-                    <div id="results"></div>
-                    <div id="answer"></div>
+                    <div id="highscore"></div>
                 </div>
+
+                <div id="results"></div>
+                <div id="answer"></div>
             </div>
-        </section>
-        <!-- quiz code ends -->
-        <!-- footer -->
+        </div>
+    </section>
+    <!-- quiz code ends -->
+    <!-- footer -->
 
         <footer class="footer">
             <div class="content has-text-centered">
@@ -277,14 +259,11 @@
               </p>
             </div>
           </footer>
-        <!-- /michael 58-->
+    
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 <script src="./assets/js/script.js"></script>
 
-<!-- /Colin ------------------------------------------------------------------------------------>
-<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-<!-- /Colin Script ENDS------------------------------------------------------------------------------------>
 </body>
-
 </html>

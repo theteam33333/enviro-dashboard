@@ -3,6 +3,10 @@ body {
     opacity: 0.9;
 }
 
+#navbar {
+  margin-bottom: -24px;
+}
+
 #burgerToggle {
   color: white;
 }

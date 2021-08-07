@@ -13,69 +13,72 @@
 </head>
 
 <body class="main">
-    <!-- Michael code start -->
+
+  <!-- background video -->
+
+  <video playsinline autoplay muted loop poster="" id="bgvid">
+    <source src="./assets/background.mp4" type="video/webm">
+</video>
+
     <!-- header -->
+
     <nav class="navbar is-link" role="navigation" aria-label="main navigation" id="navbar">
   <div class="navbar-brand">
     <a class="navbar-item">
         <strong>The EnviroDashboard</strong>
+    </a>
+
+      <div class="navbar-item has-text-white is-hidden-desktop">
+        Climate is Changing...
+      </div>
 
     <!-- LOGO GOES HERE 
       <img src="" width="112" height="28">
     </a> 
     /LOGO-->
 
-
-    <!-- burger currently does not function https://adminhacks.com/bulma-burger-interactive.html -->
-
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+    <a role="button" class="navbar-burger burger" id="burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onclick="toggleBurger()">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
+    <div class="navbar-dropdown is-hidden" id="burgerToggle">
+      <a class="navbar-item has-text-white" href="welcome.html">
+        Home
+      </a>
+      <a class="navbar-item has-text-white" href="#hero">
+        Pollution Index
+      </a>
+      <a class="navbar-item has-text-white" href="#articles">
+        Climate News
+      </a>
+      <a class="navbar-item has-text-white" href="#iBox">
+        Key Topics
+      </a>
+      <a class="navbar-item has-text-white" href="#contact">
+        Contact Us
+      </a>
+    </div>
+    
   </div>
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href="#navbar">
+      <a class="navbar-item" href="welcome.html">
         Home
       </a>
-
       <a class="navbar-item" href="#hero">
-        Test Your City
+        Pollution Index
       </a>
       <a class="navbar-item" href="#articles">
-        In The News
+        Climate News
       </a>
       <a class="navbar-item" href="#iBox">
         Key Topics
       </a>
-
-      <!--concept dropdown box-->
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More
-        </a>
-
-        <div class="navbar-dropdown">
-          <a class="navbar-item">
-            About
-          </a>
-          <a class="navbar-item">
-            Resources
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            Report an issue
-          </a>
-        </div>
+      <div class="navbar-item has-text-white">
+        The Climate is Changing... Find out How
       </div>
-      <div class="navbar-item subtitle">
-          The Climate is Changing... Find out How
-      </div>
-
-      <!--concept dropdown box-->
 
     </div>
 
@@ -87,7 +90,7 @@
   </div>
 </nav>
         <div>
-            <!-- first row, widget space -->
+            <!-- hero -->
             <section class="hero is-primary is-medium" id="hero">
                 <div class="hero-body" style="background-image: url(./assets/images/heroimg.jpg)">
                     <div class="columns" id="heroRow">
@@ -124,130 +127,77 @@
             </div>
     </section>    
     <br>
-
-<!-- michael -->
-<!-- second row, information boxes -->
-<!-- Craig climate api articles -->
-
-    <div>
-            <div class="climateArticles" id="articles">
-                <h2>Articles On Climate Change Issues</h2>
-            </div>
-    </div>
-
-<!-- michael -->
-<!-- second row, information boxes -->
-
-
-<!-- consider remaking infoboxes as 'cards' https://bulma.io/documentation/components/card/ -->
-
- <div class="columns iBox is-three-quarters-desktop" id="iBox">
-    <div class="column is-1"></div>
-   
-        <h1 style="text-align: center;">Greenhouse Gas</h1> <br>
-        <h2 style="text-align: justify;" class="title is-6">.</h2>
-        <h6 class="subtitle is-2 has-text-gray">
-
-        </h6>
-        <p class="title is-4">
-            Geenhouse Gas
-        </p>
-    <div class="content">
-        Greenhouse gas is any gas that is capable of absorbing infrared radiation 
-        (net heat energy) emitted from the Earth's surface and reradiating it back to the Earth's surface.
-    </div>
-    </div>
-    <footer class="card-footer">
-        <a href="#" class="card-footer-item"> Please read more here. </a>
-    </footer>
-    </div>
-    </div>
-    </div>
-    <div class="column">
-    <div class="card">
-        <div class="card-content">
-           <div class="has-text-centered">
-   <div class="column is-1"></div>
-  
-       <h1 style="text-align: center;">Greenhouse Gas</h1> <br>
-       <h2 style="text-align: justify;" class="title is-6">.</h2>
-       <h6 class="subtitle is-2 has-text-gray">
-
-       </h6>
-       <p class="title is-4">
-        Global Warming
-       </p>
-   <div class="content">
-    Global warming is the increase of the average air temperature near the surface of the Earth over
-    the past one to two centuries due to the influence of human activities. This increase is affecting temperatures, precipitation and storms. 
-    It is also influencing ocean currents and atmospheric chemical composition to significantly alter weather events.
-   </div>
-   </div>
-   <footer class="card-footer">
-       <a href="#" class="card-footer-item"> Please read more here. </a>
-   </footer>
-   </div>
-   </div>
-   </div>
-
-   <div class="column">
-    <div class="card">
-        <div class="card-content">
-           <div class="has-text-centered">
-   <div class="column is-1"></div>
-  
-       <h1 style="text-align: center;">Greenhouse Gas</h1> <br>
-       <h2 style="text-align: justify;" class="title is-6">.</h2>
-       <h6 class="subtitle is-2 has-text-gray">
-
-       </h6>
-       <p class="title is-4">
-        Carbon Footprint
-       </p>
-   <div class="content">
-        Carbon footprint is the amount of carbon dioxide (CO2) emissions associated with all the activities of a person, building, corporation, country, etc.
-	    It includes direct emissions from those entities along with emissions produced by other entities who provide/produce services/goods that are consumed.
-   </div>
-   </div>
-   <footer class="card-footer">
-       <a href="#" class="card-footer-item"> Please read more here. </a>
-   </footer>
-   </div>
-   </div>
-   </div>
-
+    <!-- climate api articles -->
     
-   <div class="column">
-    <div class="card">
-        <div class="card-content">
-           <div class="has-text-centered">
-   <div class="column is-1"></div>
-  
-       <h1 style="text-align: center;">Greenhouse Gas</h1> <br>
-       <h2 style="text-align: justify;" class="title is-6">.</h2>
-       <h6 class="subtitle is-2 has-text-gray">
+    <div class="tile is-ancestor" id="articles">
+        <div class="tile is-parent is-3">
+        </div>    
+        <div class="tile is-parent is-6">
+            <div class="tile is-child box has-background-primary-light">
+                <h2 class="title is-1 has-text-centered">Climate Change News</h2>
+                    <div class="climateArticles">
+                    </div>
+            </div>
+        </div> 
+    </div>
+    
+<!-- End of climate api articles -->    
 
-       </h6>
-       <p class="title is-4">
-        Carbon Footprint
-       </p>
-   <div class="content">
-    Deforestation is the clearing or thinning of forests by humans. Forests are 
-    important factor in absorbing carbon dioxide from the atmosphere. As such, 
-    the reduction in forests contributes to greenhouse 
-    gas emission issues and global warming.
-   </div>
-   </div>
-   </div>
-   <footer class="card-footer">
-       <a href="#" class="card-footer-item"> Please read more here. </a>
-   </footer>
-   </div>
-   </div>
-</section>
+<!-- information boxes -->
 
-            <div class="column is-1"></div>
+
+    <div class="tile is-ancestor" id="iBox">
+        <div class="tile is-parent">
+
+
+        <div class="tile is-vertical">
+            <div class="tile is-parent">
+            <div class="tile is-child box topic-color">
+            <h1 class="title is-4 has-text-centered">Greenhouse Gas</h1>
+            <h2 class="title is-6 has-text-justified">Greenhouse gas is any gas that is capable of absorbing infrared radiation (net heat energy) emitted from the Earth's surface and reradiating it back to the Earth's surface.</h2>
+            </div>
+            </div>        
         </div>
+        
+        <div class="tile is-vertical">
+            <div class="tile is-parent">
+            <div class="tile is-child box topic-color">
+            <h1 class="title is-4 has-text-centered">Ozone Depletion</h1>
+            <h2 class="title is-6 has-text-justified">Ozone depletion is the gradual thinning of the Earth's ozone layer in the upper atmosphere caused by the release of chemical compounds containing gaseous chlorine or bromine from industry and other human activities.</h2>
+            </div>
+            </div>    
+        </div>
+
+        <div class="tile is-vertical">
+            <div class="tile is-parent">
+            <div class="tile is-child box topic-color">
+            <h1 class="title is-4 has-text-centered">Global Warming</h1>
+            <h2 class="title is-6 has-text-justified">Global warming is the increase of the average air temperature near the surface of the Earth over the past one to two centuries due to the influence of human activities. This increase is affecting temperatures, precipitation and storms. It is also influencing ocean currents and atmospheric chemical composition to significantly alter weather events.</h2>
+            </div>
+            </div>    
+        </div>
+
+        <div class="tile is-vertical">
+            <div class="tile is-parent">
+            <div class="tile is-child box topic-color">
+            <h1 class="title is-4 has-text-centered">Carbon Footprint</h1>
+            <h2 class="title is-6 has-text-justified">Carbon footprint is the amount of carbon dioxide (CO2) emissions associated with all the activities of a person, building, corporation, country, etc. It includes direct emissions from those entities along with emissions produced by other entities who provide/produce services/goods that are consumed. Fossil fuels and greenhouse gases such as methane, nitrous oxide and chlorofluorocarbons are examples of problematic emissions.</h2>
+            </div>
+            </div>    
+        </div>
+
+        <div class="tile is-vertical">
+            <div class="tile is-parent">
+            <div class="tile is-child box topic-color">
+            <h1 class="title is-4 has-text-centered">Deforestation</h1>
+            <h2 class="title is-6 has-text-justified">Deforestation is the clearing or thinning of forests by humans. Forests are important factor in absorbing carbon dioxide from the atmosphere. As such, the reduction in forests contributes to greenhouse gas emission issues and global warming.</h2>
+            </div>
+            </div>    
+        </div>
+        </div>
+
+    </div>
+        <!-- infoboxes end -->
 
         <!--quiz code start-->
         <section class="columns" id="quizBox">
@@ -268,9 +218,11 @@
                     <div id="answer"></div>
                 </div>
             </div>
-        </section>
-        <!-- quiz code ends -->
-        <!-- footer -->
+        <!--div-->
+    </section>
+    <!-- quiz code ends -->
+    
+    <!-- footer -->
 
         <footer class="footer">
             <div class="content has-text-centered">
@@ -279,7 +231,7 @@
                 <br><br>
                  Know the Facts
                 <br><br>
-                Contact us by <a href="mailto:theteam33333@gmail.com" id="contact">Email</a>
+                Contact us by email: <a href="mailto:theteam33333@gmail.com" id="contact">theteam33333@gmail.com</a>
               </p>
             </div>
           </footer>

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // Guardian climate article api start
 // Retrieve ten climate change article links from the Guardian api
 fetch ("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c12-3fa4-4b07-a5fa-72ff409c8dc3")
@@ -17,7 +15,13 @@ fetch ("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864
     for (let i=0; i < 5; i++) {
       webTitle = (data.response.results[i].webTitle);
       webUrl = (data.response.results[i].webUrl);
-      //var buttonEl = document.createElement("button");
+      let div = document.createElement("div");
+      div.className="column";
+      climateArticleEl.appendChild(div);
+      div.className="card";
+      climateArticleEl.appendChild(div);
+      div.className="card-content";
+      climateArticleEl.appendChild(div);
       var aEl = document.createElement("a");
       var aBr = document.createElement("br");
       aEl.href=webUrl;
@@ -496,7 +500,6 @@ submitScore.addEventListener("click", saveScore);
 
 
 
->>>>>>> 94e504fa910f57aa2280a69dccfa8e1bbb783d49
 // Code for Pollution Widget
 
 var pollutionEl = $("#pollution");
@@ -603,33 +606,6 @@ searchCityEl.click(function() {
 
 
 //  Code for Pollution Widget ends
-<<<<<<< HEAD
-// fetch ("https://api.climateclock.world/v1/clock") 
-fetch ("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c12-3fa4-4b07-a5fa-72ff409c8dc3")
-
-  .then (function(res) {
-    return res.json();
-  })
-
-  .then (function(data) {
-    console.log(data);
-    var climateClockEl = document.querySelector('.climateClock');
-    var webTitle = (data.response.results[0].webTitle);
-    var webUrl = (data.response.results[0].webUrl);
-    var buttonEl = document.createElement("button");
-    var aEl = document.createElement("a");
-    aEl.href=webUrl;
-    aEl.innerHTML=webTitle;
-    console.log(aEl);
-    //buttonEl.textContent = aEl;
-    climateClockEl.appendChild(aEl);
-  });
-
-
-
-
-=======
->>>>>>> 94e504fa910f57aa2280a69dccfa8e1bbb783d49
 
 
 

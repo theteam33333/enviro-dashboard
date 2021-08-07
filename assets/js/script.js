@@ -632,6 +632,7 @@ function displayPollution(pollutionData){
     cityAirQualityEl.append(cityNameEl);
     cityAirQualityEl.append(aqiEl);
     cityAirQualityEl.append(airQualityEl);
+    pollutionEl.removeClass("is-hidden");
     pollutionEl.append(cityAirQualityEl);
 
     

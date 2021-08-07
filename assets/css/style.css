@@ -3,17 +3,6 @@ body {
     opacity: 0.9;
 }
 
-
-/* infobox styling shouldn't be necessary if bulma class tags are used, these may be removed later */
-.infoBox {
-    border: solid black 2px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 20px;
-    background-color: white;
-    min-height: 400px;  
-}
-
 /* style for hero */
 
 .hero-body {
@@ -200,7 +189,6 @@ video {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background-color: black; */
 }
 
 .green {
@@ -239,15 +227,6 @@ video {
 }
 /* Styling for Pollution Widget ends */
 
-
-/* michael - added line to javascript to 
-/* Styling for guardian api starts */
-/* .guardian,
-.climateArticles {
-  padding-left: 20px;
-  text-align: center;
-} */
 .topic-color {
   background-color: #b7e4c7;
-  /* background-color: #adffd6; */
 }

@@ -7,7 +7,6 @@ fetch("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c
   })
   // Extract article title and url from the dataset
   .then(function (data) {
-    console.log("Guardian api data", data);
     var climateArticleEl = document.querySelector('.climateArticles');
     climateArticleEl.classList.add("guardian");
     var webTitle;
@@ -524,19 +523,15 @@ var airPollutionUrl = 'https://api.waqi.info/feed/'
 
 function getPollutionData(cityName) {
  fetch(airPollutionUrl + cityName + "/?token=" + apiKey)
-// fetch(airPollutionUrl + "xyz" + "/?token=" + apiKey)
 .then(function(response){
     return response.json()
 .then(function(pollutionData){
-    console.log("pollutionData= ", pollutionData);
     const {status, data} = pollutionData;
-    console.log("status=", status, "data=", data);
     pollutionEl.empty();
     if (status == "ok"){
     displayPollution(pollutionData);
     }
     else {
-      console.log("City not Found");
       var alertEl = $("<div>");
       alertEl.addClass("notification is-danger");
       alertEl.text("Please check the city name or try another city");
@@ -546,16 +541,12 @@ function getPollutionData(cityName) {
     };
 })
 .catch(function(error){
-  console.log("Something is wrong");
 
 }) 
 });
 }
 
 function displayPollution(pollutionData){
-
-    // clear out the previous data
-    // pollutionEl.empty();
     
     const cityAirQualityEl = $("<div>");
     const cityNameEl = $("<div>");
@@ -576,7 +567,6 @@ function displayPollution(pollutionData){
     uvi = pollutionData.data.forecast.daily.uvi[2].avg;
     oozone = pollutionData.data.forecast.daily.o3[2].avg;
 
-    console.log("pm25=", pm25);
     cityNameEl.text(cityName + " Air Quality");
     if (aqi < 51) {
         airQuality = "Good";
@@ -635,7 +625,6 @@ function displayPollution(pollutionData){
     arrayInfo = [pm25Info, pm10Info, ozoneInfo, uviInfo];
     const arrayPollution = [pm25El, pm10El, ozoneEl, uviEl];
     arrayPollution.forEach(function(arrayItem){
-      console.log()
       const spanEl = $("<span>");
       spanEl.addClass("has-tooltip-multiline");
       spanEl.attr("data-tooltip", arrayInfo[i]);
@@ -662,7 +651,6 @@ $("#cityName").keypress(function(e){
     if(e.keyCode === 13){
     var inputEl = $("#cityName");
     cityName = inputEl.val().toUpperCase();
-    console.log("City name is = ", cityName);
     getPollutionData(cityName);
     e.preventDefault();
     }
@@ -671,108 +659,13 @@ $("#cityName").keypress(function(e){
 searchCityEl.click(function() {
     var inputEl = $("#cityName");
     cityName = inputEl.val().toUpperCase();
-    console.log("City name is = ", cityName);
     getPollutionData(cityName);
 })
 
 
 //  Code for Pollution Widget ends
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Colin -------------------------------------------------------------------------------------------//
-// THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM STARTS HERE-------------------------------------------------------------------------------------------//
+// THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM STARTS HERE
 
 $(".default_option").click(function () {
   $(".dropdown ul").addClass("active");
@@ -784,7 +677,4 @@ $(".dropdown ul li").click(function () {
   $(".dropdown ul").removeClass("active");
 });
 
-
-
-  // Colin -------------------------------------------------------------------------------------------//
-//  THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM ENDS -------------------------------------------------------------------------------------------//
+//  THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM ENDS

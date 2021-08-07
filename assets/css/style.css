@@ -142,9 +142,10 @@ body {
   margin: 30px auto;
   padding: 20px;
   background-color: white;
+  opacity: 0.9;
   border-radius: 30px;
   overflow-x: scroll;
-  
+
 }
 ::-webkit-scrollbar {
   width: 20px;
@@ -173,10 +174,12 @@ body {
   height: 200px;
   margin-left: 20px;
   z-index: 2;
-
+  
 }
 .score {
   cursor: pointer;
+  font-weight:bolder;
+  font-size:20px;
 }
 
 video {

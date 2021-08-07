@@ -270,7 +270,10 @@ const deforestation = [
 display();
 
 function display() {
+
   let initialScreen = document.createElement("h1");
+  initialScreen.style.fontSize = "20px"
+  initialScreen.style.fontWeight = "bolder"
   initialScreen.innerHTML = `<br>Climate Quiz<br> <br>`;
 
   let paraScreen = document.createElement("p");
@@ -348,7 +351,7 @@ function displayQuestions() {
 
 
   output.push(
-    `   <div id="questions"><h2> ${question.question} </h2></div>
+    `   <div id="questions"><h2 style = "font-weight:bolder; font-size:20px;"> ${question.question} </h2></div>
         <br>
         <div id="choices"> ${choices.join("")} </div>
       `
@@ -391,12 +394,17 @@ function showScore(correctNum) {
 
   let scoreDiv = document.createElement("div");
   let scoreH1El = document.createElement("h1");
+  scoreH1El.style.fontSize = "20px"
+  scoreH1El.style.fontWeight = "bolder"
+
   scoreH1El.innerHTML = "All done!";
 
   let scoreResult = document.createElement("p");
   scoreResult.textContent = `Your final score is: ${correctNum * 10} out of 50`;
 
   let nameLabel = document.createElement("span");
+  nameLabel.style.fontSize = "20px"
+  nameLabel.style.fontWeight = "bolder"
   nameLabel.textContent = "Enter your NAME: ";
 
   let nameInput = document.createElement("input");
@@ -452,6 +460,8 @@ function displayScores() {
   clearScore.setAttribute("id", "clearscore");
 
   scoreH1El.textContent = "Highscores";
+  scoreH1El.style.fontSize = "20px"
+  scoreH1El.style.fontWeight = "bolder"
   highScoreEl.appendChild(scoreH1El);
   scoreList.setAttribute("id", "scoreList");
   highScoreEl.appendChild(scoreList);

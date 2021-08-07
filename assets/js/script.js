@@ -7,7 +7,7 @@ const toggleBurger = () => {
   dropMenu.classList.toggle('is-hidden');
 }
 
-//document.burgerIcon.addEventListener('click', toggleBurger())
+// end burger js
 
 // Guardian climate article api start
 // Retrieve ten climate change article links from the Guardian api

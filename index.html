@@ -2,145 +2,149 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The EnviroDashboard</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/bulma-tooltip.min.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The EnviroDashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/bulma-tooltip.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
 </head>
 
 <body class="main">
   <video playsinline autoplay muted loop poster="" id="bgvid">
     <source src="./assets/background.mp4" type="video/webm">
-</video>
-    <!-- Michael code start -->
-    <!-- header -->
-    <nav class="navbar is-link" role="navigation" aria-label="main navigation" id="navbar">
-  <div class="navbar-brand">
-    <a class="navbar-item">
+  </video>
+  <!-- Michael code start -->
+  <!-- header -->
+  <nav class="navbar is-link" role="navigation" aria-label="main navigation" id="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item">
         <strong>The EnviroDashboard</strong>
 
-    <!-- LOGO GOES HERE 
+        <!-- LOGO GOES HERE 
       <img src="" width="112" height="28">
     </a> 
     /LOGO-->
 
 
-    <!-- burger currently does not function https://adminhacks.com/bulma-burger-interactive.html -->
+        <!-- burger currently does not function https://adminhacks.com/bulma-burger-interactive.html -->
 
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+    </div>
 
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item" href="#navbar">
-        Home
-      </a>
-
-      <a class="navbar-item" href="#hero">
-        Test Your City
-      </a>
-      <a class="navbar-item" href="#articles">
-        In The News
-      </a>
-      <a class="navbar-item" href="#iBox">
-        Key Topics
-      </a>
-
-      <!--concept dropdown box-->
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="#navbar">
+          Home
         </a>
 
-        <div class="navbar-dropdown">
-          <a class="navbar-item">
-            About
+        <a class="navbar-item" href="#hero">
+          Test Your City
+        </a>
+        <a class="navbar-item" href="#articles">
+          In The News
+        </a>
+        <a class="navbar-item" href="#iBox">
+          Key Topics
+        </a>
+
+        <!--concept dropdown box-->
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More
           </a>
-          <a class="navbar-item">
-            Resources
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            Report an issue
-          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item">
+              About
+            </a>
+            <a class="navbar-item">
+              Resources
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item">
+              Report an issue
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="navbar-item subtitle">
+        <div class="navbar-item subtitle">
           The Climate is Changing... Find out How
+        </div>
+
+        <!--concept dropdown box-->
+
       </div>
 
-      <!--concept dropdown box-->
-
+      <div class="navbar-end">
+        <a class="navbar-item" href="#contact">
+          Contact Us
+        </a>
+      </div>
     </div>
+  </nav>
+  <div>
 
-    <div class="navbar-end">
-          <a class="navbar-item" href="#contact">
-            Contact Us
-          </a>
-    </div>
-  </div>
-</nav>
-        <div>
-            <!-- first row, widget space -->
-            <section class="hero is-primary is-medium" id="hero">
-                <div class="hero-body" style="background-image: url(./assets/images/heroimg.jpg)">
-                    <div class="columns" id="heroRow">
-                        <div class="column is-2"></div>
-                        <div class="column is-5"></div>
 
-                        <div class="column is-3">
-                            <div class="block center">
-                                <form action="">
-                                    <div class="wrapper">
-                                        <div class="search_box">
-                                            <div class="search_field">
-                                                <input type="text" class="input" id="cityName" onfocus="this.value=''" placeholder="Enter your City">
-                                                <i id="searchCity" class="fas fa-search"></i>
-                                            </div>
-                                        </div>
-                                    
-                                    </div>
-                                </form>
-                               
-                            </div>
-                        
+    <!-- first row, widget space -->
+    <section class="hero is-primary is-medium" id="hero">
+      <div class="hero-body" style="background-image: url(./assets/images/heroimg.jpg)">
+        <div class="columns" id="heroRow">
+          <div class="column is-2"></div>
+          <div class="column is-5"></div>
+
+          <div class="column is-3">
+            <div class="block center">
+              <form action="">
+                <div class="wrapper">
+                  <div class="search_box">
+                    <div class="search_field">
+                      <input type="text" class="input" id="cityName" onfocus="this.value=''"
+                        placeholder="Enter your City">
+                      <i id="searchCity" class="fas fa-search"></i>
+                    </div>
+                  </div>
+
+                </div>
+              </form>
+
+
+            </div>
+
             <!-- Code for Pollution Widget -->
             <div class="center">
-                <div id="pollution" class="container box has-background-info widget center">
-                </div>
+              <div id="pollution" class="container box has-background-info widget center">
+              </div>
             </div>
             <!-- Code for Pollution Widget Ends -->
-                    </div>
+          </div>
 
-                        <div class="column is-2"></div>
-                    </div>
-                </div>
-            </div>
-    </section>    
-    <br>
-    <!-- Craig climate api articles -->
-    <div>
-            <div class="climateArticles" id="articles">
-                <h2>Articles On Climate Change Issues</h2>
-            </div>
+          <div class="column is-2"></div>
+        </div>
+      </div>
+  </div>
+  </section>
+  <br>
+  <!-- Craig climate api articles -->
+  <div>
+    <div class="climateArticles" id="articles">
+      <h2>Articles On Climate Change Issues</h2>
     </div>
+  </div>
 
-<!-- michael -->
-<!-- second row, information boxes -->
+  <!-- michael -->
+  <!-- second row, information boxes -->
 
 
-<!-- consider remaking infoboxes as 'cards' https://bulma.io/documentation/components/card/ -->
+  <!-- consider remaking infoboxes as 'cards' https://bulma.io/documentation/components/card/ -->
 
- <!--<div class="columns iBox is-three-quarters-desktop" id="iBox">
+  <!--<div class="columns iBox is-three-quarters-desktop" id="iBox">
     <div class="column is-1"></div>
     <div class="column is-2 infoBox">
         <h1 style="text-align: center;">Greenhouse Gas</h1> <br>
@@ -158,92 +162,258 @@
         <h1 style="text-align: center;">Carbon Footprint</h1> <br>
         <h2 style="text-align: justify;">Carbon footprint is the amount of carbon dioxide (CO2) emissions associated with all the activities of a person, building, corporation, country, etc. It includes direct emissions from those entities along with emissions produced by other entities who provide/produce services/goods that are consumed. Fossil fuels and greenhouse gases such as methane, nitrous oxide and chlorofluorocarbons are examples of problematic emissions.</h2>
     </div> -->
-    <!-- michael -->
-    <!-- second row, information boxes -->
+  <!--Colin Bulma columns and rows start-->
+  <section class="section">
+    <div class="container">
+      <div class="columns is-mobile">
 
-    <div class="columns iBox is-three-quarters-desktop">
-        <div class="column is-1"></div>
-        <div class="column is-2 infoBox">
-            <h1 style="text-align: center;">Greenhouse Gas</h1> <br>
-            <h2 style="text-align: justify;">Greenhouse gas is any gas that is capable of absorbing infrared radiation
-                (net heat energy) emitted from the Earth's surface and reradiating it back to the Earth's surface.</h2>
-        </div>
-        <div class="column is-2 infoBox">
-            <h1 style="text-align: center;">Ozone Depletion</h1> <br>
-            <h2 style="text-align: justify;">Ozone depletion is the gradual thinning of the Earth's ozone layer in the
-                upper atmosphere caused by the release of chemical compounds containing gaseous chlorine or bromine from
-                industry and other human activities.</h2>
-        </div>
-        <div class="column is-2 infoBox">
-            <h1 style="text-align: center;">Global Warming</h1> <br>
-            <h2 style="text-align: justify;">Global warming is the increase of the average air temperature near the
-                surface of the Earth over the past one to two centuries due to the influence of human activities. This
-                increase is affecting temperatures, precipitation and storms. It is also influencing ocean currents and
-                atmospheric chemical composition to significantly alter weather events.</h2>
-        </div>
-        <div class="column is-2 infoBox">
-            <h1 style="text-align: center;">Carbon Footprint</h1> <br>
-            <h2 style="text-align: justify;">Carbon footprint is the amount of carbon dioxide (CO2) emissions associated
-                with all the activities of a person, building, corporation, country, etc. It includes direct emissions
-                from those entities along with emissions produced by other entities who provide/produce services/goods
-                that are consumed. Fossil fuels and greenhouse gases such as methane, nitrous oxide and
-                chlorofluorocarbons are examples of problematic emissions.</h2>
-        </div>
-        <div class="column is-2 infoBox">
-            <h1 style="text-align: center;">Deforestation</h1> <br>
-            <h2 style="text-align: justify;">Deforestation is the clearing or thinning of forests by humans. Forests are
-                important factor in absorbing carbon dioxide from the atmosphere. As such, the reduction in forests
-                contributes to greenhouse gas emission issues and global warming.</h2>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-content">
+              <div class="has-text-centered">
+                <p class="title is-4">
+                  Greenhouse Gas
+                </p>
+                <figure class="image is-2by1">
+                  <img
+                    src="https://www.thoughtco.com/thmb/T7e5vcG6Fb3ti3TH6DD7YGJdA_U=/5250x3862/filters:fill(auto,1)/smoke-and-coal-plant-smokestacks-520518812-584ac8125f9b58a8cd0e87c8.jpg">
+                </figure>
+                <div class="content">
+                  Greenhouse gas is any gas that is capable of absorbing infrared
+                  radiation (net heat energy) emitted from the Earth's surface and reradiating it back to the Earth's
+                  surface. It traps heat and makes the planet hotter.
+                </div>
+              </div>
+              <footer class="card-footer">
+                <a href="#" class="card-footer-item">Learn more here</a>
+              </footer>
+            </div>
+          </div>
         </div>
 
+
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-content">
+              <div class="has-text-centered">
+                <p class="title is-4">
+                  Ozone Depletion
+                </p>
+                <figure class="image is-2by1">
+                  <img
+                    src="https://4.bp.blogspot.com/-aX72_a2F0E0/XCMm3onRJ3I/AAAAAAAAAAY/hsSAkSePoYUtlhtkTeT5RaCEqmLEmVD7ACLcBGAs/w1200-h630-p-k-no-nu/image-wide-2.jpg">
+                </figure>
+                <div class="content">
+                  Ozone depletion is the gradual thinning of the Earth's ozone layer in
+                  the upper atmosphere caused by the release of chemical compounds containing gaseous chlorine or
+                  bromine from industry and other human activities.
+                </div>
+              </div>
+              <footer class="card-footer">
+                <a href="#" class="card-footer-item">Learn more here</a>
+              </footer>
+            </div>
+          </div>
+        </div>
+        
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-content">
+              <div class="has-text-centered">
+                <p class="title is-4">
+                  Global Warming
+                </p>
+                <figure class="image is-2by1">
+                  <img src="https://whizolosophy.com/public/uploads/images/2017/01/Global-Warming-desk-backgrounds.jpg">
+                </figure>
+                <div class="content">
+                  Global warming is the increase of the average air temperature near
+                  the surface of the earth over the past one to two centuries due to the influence of human
+                  activities. This increase is
+                  affecting temperatures, precipitation and storms.
+                </div>
+              </div>
+              <footer class="card-footer">
+                <a href="#" class="card-footer-item">Learn more here</a>
+              </footer>
+            </div>
+          </div>
+        </div>
+        
+
+      </div>
+      </div>
+    </div>
+    </section>
+      <section class="section">
+        <div class="container">
+      <div class="columns is-mobile">
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-content">
+              <div class="has-text-centered">
+                <p class="title is-4">
+                  Greenhouse Gas
+                </p>
+                <figure class="image is-2by1">
+                  <img
+                    src="https://www.thoughtco.com/thmb/T7e5vcG6Fb3ti3TH6DD7YGJdA_U=/5250x3862/filters:fill(auto,1)/smoke-and-coal-plant-smokestacks-520518812-584ac8125f9b58a8cd0e87c8.jpg">
+                </figure>
+                <div class="content">
+                  Greenhouse gas is any gas that is capable of absorbing infrared
+                  radiation (net heat energy) emitted from the Earth's surface and reradiating it back to the Earth's
+                  surface. It traps heat and makes the planet hotter.
+                </div>
+              </div>
+              <footer class="card-footer">
+                <a href="#" class="card-footer-item">Learn more here</a>
+              </footer>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-content">
+              <div class="has-text-centered">
+                <p class="title is-4">
+                  Ozone Depletion
+                </p>
+                <figure class="image is-2by1">
+                  <img
+                    src="https://4.bp.blogspot.com/-aX72_a2F0E0/XCMm3onRJ3I/AAAAAAAAAAY/hsSAkSePoYUtlhtkTeT5RaCEqmLEmVD7ACLcBGAs/w1200-h630-p-k-no-nu/image-wide-2.jpg">
+                </figure>
+                <div class="content">
+                  Ozone depletion is the gradual thinning of the Earth's ozone layer in
+                  the upper atmosphere caused by the release of chemical compounds containing gaseous chlorine or
+                  bromine from industry and other human activities.
+                </div>
+              </div>
+              <footer class="card-footer">
+                <a href="#" class="card-footer-item">Learn more here</a>
+              </footer>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-content">
+              <div class="has-text-centered">
+                <p class="title is-4">
+                  Global Warming
+                </p>
+                <figure class="image is-2by1">
+                  <img src="https://whizolosophy.com/public/uploads/images/2017/01/Global-Warming-desk-backgrounds.jpg">
+                </figure>
+                <div class="content">
+                  Global warming is the increase of the average air temperature near
+                  the surface of the earth over the past one to two centuries due to the influence of human
+                  activities. This increase is
+                  affecting temperatures, precipitation and storms.
+                </div>
+              </div>
+              <footer class="card-footer">
+                <a href="#" class="card-footer-item">Learn more here</a>
+              </footer>
+            </div>
+          </div>
+        </div>
+        
+
+      </div>
+      </div>
+      </section>
+     
+      <!--Colin Bulma columns and rows ends-->
+      <!-- michael -->
+      <!-- second row, information boxes -->
+
+      <div class="columns iBox is-three-quarters-desktop">
         <div class="column is-1"></div>
+        <div class="column is-2 infoBox">
+          <h1 style="text-align: center;">Greenhouse Gas</h1> <br>
+          <h2 style="text-align: justify;">Greenhouse gas is any gas that is capable of absorbing infrared radiation
+            (net heat energy) emitted from the Earth's surface and reradiating it back to the Earth's surface.</h2>
+        </div>
+        <div class="column is-2 infoBox">
+          <h1 style="text-align: center;">Ozone Depletion</h1> <br>
+          <h2 style="text-align: justify;">Ozone depletion is the gradual thinning of the Earth's ozone layer in the
+            upper atmosphere caused by the release of chemical compounds containing gaseous chlorine or bromine from
+            industry and other human activities.</h2>
+        </div>
+        <div class="column is-2 infoBox">
+          <h1 style="text-align: center;">Global Warming</h1> <br>
+          <h2 style="text-align: justify;">Global warming is the increase of the average air temperature near the
+            surface of the Earth over the past one to two centuries due to the influence of human activities. This
+            increase is affecting temperatures, precipitation and storms. It is also influencing ocean currents and
+            atmospheric chemical composition to significantly alter weather events.</h2>
+        </div>
+        <div class="column is-2 infoBox">
+          <h1 style="text-align: center;">Carbon Footprint</h1> <br>
+          <h2 style="text-align: justify;">Carbon footprint is the amount of carbon dioxide (CO2) emissions associated
+            with all the activities of a person, building, corporation, country, etc. It includes direct emissions
+            from those entities along with emissions produced by other entities who provide/produce services/goods
+            that are consumed. Fossil fuels and greenhouse gases such as methane, nitrous oxide and
+            chlorofluorocarbons are examples of problematic emissions.</h2>
+        </div>
+        <div class="column is-2 infoBox">
+          <h1 style="text-align: center;">Deforestation</h1> <br>
+          <h2 style="text-align: justify;">Deforestation is the clearing or thinning of forests by humans. Forests are
+            important factor in absorbing carbon dioxide from the atmosphere. As such, the reduction in forests
+            contributes to greenhouse gas emission issues and global warming.</h2>
+        </div>
+
+        <div class="column is-1"></div>
+      </div>
+
+      <div class="column is-1"></div>
     </div>
 
-            <div class="column is-1"></div>
+    <!--quiz code start-->
+    <section class="columns" id="quizBox">
+      <div class="column is-8">
+        <div class="header">
+          <div class="score">View Highscore</div>
+        </div>
+        <div id="container">
+          <div id="content">
+            <div id="initial-screen"></div>
+            <br>
+            <br>
+
+            <div id="highscore"></div>
+          </div>
+
+          <div id="highscore"></div>
         </div>
 
-        <!--quiz code start-->
-        <section class="columns" id="quizBox">
-            <div class="column is-8">
-                <div class="header">
-                    <div class="score">View Highscore</div>
-                </div>
-                <div id="container">
-                    <div id="content">
-                        <div id="initial-screen"></div>
-                        <br>
-                        <br>
-
-                        <div id="highscore"></div>
-                    </div>
-
-                    <div id="highscore"></div>
-                </div>
-
-                <div id="results"></div>
-                <div id="answer"></div>
-            </div>
-        </div>
+        <div id="results"></div>
+        <div id="answer"></div>
+      </div>
+      </div>
     </section>
     <!-- quiz code ends -->
     <!-- footer -->
 
-        <footer class="footer">
-            <div class="content has-text-centered">
-              <p>
-                <strong>The EnviroDashboard</strong> by <a href="mailto:theteam33333@gmail.com"></a><strong>Team 3</strong></a>.
-                <br><br>
-                 Know the Facts
-                <br><br>
-                Contact us by <a href="mailto:theteam33333@gmail.com" id="contact">Email</a>
-              </p>
-            </div>
-          </footer>
-    
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-<script src="./assets/js/script.js"></script>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>The EnviroDashboard</strong> by <a href="mailto:theteam33333@gmail.com"></a><strong>Team
+            3</strong></a>.
+          <br><br>
+          Know the Facts
+          <br><br>
+          Contact us by <a href="mailto:theteam33333@gmail.com" id="contact">Email</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="./assets/js/script.js"></script>
 
 </body>
+
 </html>

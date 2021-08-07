@@ -16,17 +16,14 @@ fetch("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c
       webTitle = (data.response.results[i].webTitle);
       webUrl = (data.response.results[i].webUrl);
       let div = document.createElement("div");
-      div.className="column";
-      climateArticleEl.appendChild(div);
-      div.className="card";
-      climateArticleEl.appendChild(div);
-      div.className="card-content";
+      div.className="title is-4 has-text-centered";
       climateArticleEl.appendChild(div);
       var aEl = document.createElement("a");
       var aBr = document.createElement("br");
       aEl.href=webUrl;
       aEl.innerHTML=webTitle;
-      climateArticleEl.appendChild(aEl);
+      div.appendChild(aEl);
+      climateArticleEl.appendChild(div);
       climateArticleEl.appendChild(aBr);
     }
   });

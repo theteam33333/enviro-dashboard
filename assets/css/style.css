@@ -242,8 +242,12 @@ video {
 
 /* michael - added line to javascript to 
 /* Styling for guardian api starts */
-.guardian,
+/* .guardian,
 .climateArticles {
   padding-left: 20px;
   text-align: center;
+} */
+.topic-color {
+  background-color: #b7e4c7;
+  /* background-color: #adffd6; */
 }

@@ -1,5 +1,6 @@
 body {
-    background-color: #ADE8F4;
+    background-color:#023e8a ;
+    opacity: 0.9;
 }
 
 
@@ -134,8 +135,63 @@ body {
 /* THE STYLE FOR THE SEARCH INPUT FORM ENDS HERE-------------------------------------------------------------------------------------------*/
 /*quiz code start*/
 #quizBox{
-  border: solid 2px black;
+  border: solid 5px black;
+  width: 80%;
+  height: auto;
+  min-height: 380px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 30px;
+  overflow-x: scroll;
+  
 }
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #023e8a; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #023e8a; 
+}
+.quizIntro{
+  
+  float: right;
+  width: auto;
+  height: 200px;
+  margin-left: 20px;
+  z-index: 2;
+
+}
+.score {
+  cursor: pointer;
+}
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+  z-index: -1;
+  
+}
+
+
 /*quiz code ends*/
 
 /* Styling for Pollution Widget */

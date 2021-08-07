@@ -13,6 +13,9 @@
 </head>
 
 <body class="main">
+  <video playsinline autoplay muted loop poster="" id="bgvid">
+    <source src="./assets/background.mp4" type="video/webm">
+</video>
     <!-- Michael code start -->
     <!-- header -->
     <nav class="navbar is-link" role="navigation" aria-label="main navigation" id="navbar">
@@ -124,7 +127,7 @@
             </div>
     </section>    
     <br>
-<!-- Craig climate api articles -->
+    <!-- Craig climate api articles -->
     <div>
             <div class="climateArticles" id="articles">
                 <h2>Articles On Climate Change Issues</h2>
@@ -137,7 +140,7 @@
 
 <!-- consider remaking infoboxes as 'cards' https://bulma.io/documentation/components/card/ -->
 
- <div class="columns iBox is-three-quarters-desktop" id="iBox">
+ <!--<div class="columns iBox is-three-quarters-desktop" id="iBox">
     <div class="column is-1"></div>
     <div class="column is-2 infoBox">
         <h1 style="text-align: center;">Greenhouse Gas</h1> <br>
@@ -154,10 +157,46 @@
     <div class="column is-2 infoBox">
         <h1 style="text-align: center;">Carbon Footprint</h1> <br>
         <h2 style="text-align: justify;">Carbon footprint is the amount of carbon dioxide (CO2) emissions associated with all the activities of a person, building, corporation, country, etc. It includes direct emissions from those entities along with emissions produced by other entities who provide/produce services/goods that are consumed. Fossil fuels and greenhouse gases such as methane, nitrous oxide and chlorofluorocarbons are examples of problematic emissions.</h2>
-    </div>
-    <div class="column is-2 infoBox">
-        <h1 style="text-align: center;">Deforestation</h1> <br>
-        <h2 style="text-align: justify;">Deforestation is the clearing or thinning of forests by humans. Forests are important factor in absorbing carbon dioxide from the atmosphere. As such, the reduction in forests contributes to greenhouse gas emission issues and global warming.</h2>
+    </div> -->
+    <!-- michael -->
+    <!-- second row, information boxes -->
+
+    <div class="columns iBox is-three-quarters-desktop">
+        <div class="column is-1"></div>
+        <div class="column is-2 infoBox">
+            <h1 style="text-align: center;">Greenhouse Gas</h1> <br>
+            <h2 style="text-align: justify;">Greenhouse gas is any gas that is capable of absorbing infrared radiation
+                (net heat energy) emitted from the Earth's surface and reradiating it back to the Earth's surface.</h2>
+        </div>
+        <div class="column is-2 infoBox">
+            <h1 style="text-align: center;">Ozone Depletion</h1> <br>
+            <h2 style="text-align: justify;">Ozone depletion is the gradual thinning of the Earth's ozone layer in the
+                upper atmosphere caused by the release of chemical compounds containing gaseous chlorine or bromine from
+                industry and other human activities.</h2>
+        </div>
+        <div class="column is-2 infoBox">
+            <h1 style="text-align: center;">Global Warming</h1> <br>
+            <h2 style="text-align: justify;">Global warming is the increase of the average air temperature near the
+                surface of the Earth over the past one to two centuries due to the influence of human activities. This
+                increase is affecting temperatures, precipitation and storms. It is also influencing ocean currents and
+                atmospheric chemical composition to significantly alter weather events.</h2>
+        </div>
+        <div class="column is-2 infoBox">
+            <h1 style="text-align: center;">Carbon Footprint</h1> <br>
+            <h2 style="text-align: justify;">Carbon footprint is the amount of carbon dioxide (CO2) emissions associated
+                with all the activities of a person, building, corporation, country, etc. It includes direct emissions
+                from those entities along with emissions produced by other entities who provide/produce services/goods
+                that are consumed. Fossil fuels and greenhouse gases such as methane, nitrous oxide and
+                chlorofluorocarbons are examples of problematic emissions.</h2>
+        </div>
+        <div class="column is-2 infoBox">
+            <h1 style="text-align: center;">Deforestation</h1> <br>
+            <h2 style="text-align: justify;">Deforestation is the clearing or thinning of forests by humans. Forests are
+                important factor in absorbing carbon dioxide from the atmosphere. As such, the reduction in forests
+                contributes to greenhouse gas emission issues and global warming.</h2>
+        </div>
+
+        <div class="column is-1"></div>
     </div>
 
             <div class="column is-1"></div>
@@ -178,13 +217,16 @@
                         <div id="highscore"></div>
                     </div>
 
-                    <div id="results"></div>
-                    <div id="answer"></div>
+                    <div id="highscore"></div>
                 </div>
+
+                <div id="results"></div>
+                <div id="answer"></div>
             </div>
-        </section>
-        <!-- quiz code ends -->
-        <!-- footer -->
+        </div>
+    </section>
+    <!-- quiz code ends -->
+    <!-- footer -->
 
         <footer class="footer">
             <div class="content has-text-centered">

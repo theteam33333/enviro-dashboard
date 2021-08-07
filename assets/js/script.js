@@ -1,12 +1,12 @@
 // Guardian climate article api start
 // Retrieve ten climate change article links from the Guardian api
-fetch ("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c12-3fa4-4b07-a5fa-72ff409c8dc3")
+fetch("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c12-3fa4-4b07-a5fa-72ff409c8dc3")
   //Convert to JSON
-  .then (function(res) {
+  .then(function (res) {
     return res.json();
   })
   // Extract article title and url from the dataset
-  .then (function(data) {
+  .then(function (data) {
     console.log("Guardian api data", data);
     var climateArticleEl = document.querySelector('.climateArticles');
     climateArticleEl.classList.add("guardian");
@@ -47,7 +47,7 @@ const greenEmission = [
     question: "Which of the following is a greenhouse gas?",
     choices: { 1: "CARBON DIOXIDE", 2: "METHANE", 3: "WATER VAPOUR", 4: "ALL OF THE ABOVE" },
     answer: "4",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question: "Which of the following are consequences associated with climate change?",
@@ -58,7 +58,7 @@ const greenEmission = [
       4: "ALL OF THE ABOVE.",
     },
     answer: "4",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question: "Scientists argue that the concentration of greenhouse gases in the atmosphere is:",
@@ -69,7 +69,7 @@ const greenEmission = [
       4: "RAPIDLY DECREASING",
     },
     answer: "1",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question:
@@ -81,7 +81,7 @@ const greenEmission = [
       4: "OZONE",
     },
     answer: "2",
-    img: "https://image.shutterstock.com/image-vector/landscape-photo-image-picture-placeholder-600w-272872412.jpg"
+
   },
 ];
 
@@ -95,7 +95,7 @@ const ozone = [
       4: "NONE OF THE ABOVE",
     },
     answer: "2",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question: "Where do CFCs come from?",
@@ -106,7 +106,7 @@ const ozone = [
       4: "SUN",
     },
     answer: "3",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question: "What is an ozone molecule formed from?",
@@ -117,7 +117,7 @@ const ozone = [
       4: "1 HYDROGEN AND 1 OXYGEN ATOM ",
     },
     answer: "1",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question:
@@ -129,7 +129,7 @@ const ozone = [
       4: "NONE OF ABOVE",
     },
     answer: "2",
-    img: "https://image.shutterstock.com/image-vector/landscape-photo-image-picture-placeholder-600w-272872412.jpg"
+
   },
 ];
 
@@ -138,7 +138,7 @@ const global = [
     question: "How could global warming affect polar regions?",
     choices: { 1: "IT WILL MAKE THEM WARMER", 2: "IT WILL MAKE THEM COLDER", 3: "IT WON'T AFFECT THEM", 4: "IT WILL RESULT IN EXPANSION OF AREA" },
     answer: "1",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question: "Which of the following types of sources of energy do not produce carbon di-oxide?",
@@ -149,7 +149,7 @@ const global = [
       4: "ALL OF THE ABOVE",
     },
     answer: "4",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question: "How can we stop global warming?",
@@ -160,7 +160,7 @@ const global = [
       4: "IT CAN'T BE STOPPED",
     },
     answer: "2",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question:
@@ -172,7 +172,7 @@ const global = [
       4: "CLIMATOLOGIST",
     },
     answer: "4",
-    img: "https://image.shutterstock.com/image-vector/landscape-photo-image-picture-placeholder-600w-272872412.jpg"
+
   },
 ];
 
@@ -181,7 +181,7 @@ const carbonFoot = [
     question: "Which of the following will result in carbon footprint reduction?",
     choices: { 1: "BURNING FOSSIL FUELS", 2: "TAKING LONG SHOWERS", 3: "TURNING ON LIGHTS WHEN NOT IN USE", 4: "AFFORESTATION" },
     answer: "4",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question: "Farmer's tractor adds to the carbon footprint of food because___________?",
@@ -192,7 +192,7 @@ const carbonFoot = [
       4: "IT HAS RED COLOR",
     },
     answer: "3",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question: "Which of these choices in transportation produces less greenhouse gas than the others?",
@@ -203,7 +203,7 @@ const carbonFoot = [
       4: "TAKING A TRAIN",
     },
     answer: "1",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question:
@@ -215,7 +215,7 @@ const carbonFoot = [
       4: "CARBON SUMMARY",
     },
     answer: "3",
-    img: "https://image.shutterstock.com/image-vector/landscape-photo-image-picture-placeholder-600w-272872412.jpg"
+
   },
 ];
 
@@ -225,7 +225,7 @@ const deforestation = [
     question: "How do plants affect carbon dioxide levels in the atmosphere?",
     choices: { 1: "THEY REDUCE THEM", 2: "THEY INCREASE THEM", 3: "THEY MAKE NO DIFFERENCE", 4: "NONE OF THE ABOVE" },
     answer: "1",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question: "Cutting trees on large scale is called_______?",
@@ -236,7 +236,7 @@ const deforestation = [
       4: "NONE OF THE ABOVE",
     },
     answer: "1",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question: "Soil erosion is prevented by_________?",
@@ -247,7 +247,7 @@ const deforestation = [
       4: "NONE OF THE ABOVE",
     },
     answer: "2",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question:
@@ -259,7 +259,7 @@ const deforestation = [
       4: "SULPHUR DIOXIDE",
     },
     answer: "3",
-    img: "https://image.shutterstock.com/image-vector/landscape-photo-image-picture-placeholder-600w-272872412.jpg"
+
   },
 ];
 
@@ -271,12 +271,22 @@ display();
 
 function display() {
   let initialScreen = document.createElement("h1");
-  initialScreen.textContent = "Climate Quiz";
+  initialScreen.innerHTML = `<br>Climate Quiz<br> <br>`;
 
   let paraScreen = document.createElement("p");
-  paraScreen.textContent = `Try to answer the following climate-related questions !`;
+  paraScreen.innerHTML = `<p>Try to answer the following climate-related questions!<br>
+  Each correct answer will give you 10 points!<br> <br> <br>
+  GOOD LUCK !!!! <br> <br></p>`;
+
+  let quizImg = document.createElement("img")
+  quizImg.setAttribute("src", "./assets/quizIntro.jpg")
+  quizImg.classList.add("quizIntro")
+
 
   let startBtn = document.createElement("button");
+  startBtn.classList.add("button")
+  startBtn.classList.add("is-primary")
+  startBtn.classList.add("is-rounded")
   startBtn.innerHTML = "Start Quiz";
   startBtn.type = "button";
   startBtn.name = "startBtn";
@@ -284,8 +294,12 @@ function display() {
 
 
   startBtn.addEventListener("click", displayQuestions);
+  startBtn.addEventListener("click", function () {
+    headerEl.style.display = "none"
+  })
 
   initialEl.appendChild(initialScreen);
+  initialEl.appendChild(quizImg)
   initialEl.appendChild(paraScreen);
   initialEl.appendChild(startBtn);
 }
@@ -305,6 +319,9 @@ headerEl.appendChild(ScoreEl);
 
 
 let submitScore = document.createElement("button");
+submitScore.classList.add("button")
+submitScore.classList.add("is-info")
+submitScore.classList.add("is-small")
 submitScore.textContent = "Submit";
 
 const lastQuestion = random.length - 1;
@@ -320,7 +337,7 @@ function displayQuestions() {
   for (choice in question.choices) {
     choices.push(
       `<div>
-          <button name="question${questionsCtr}" onclick='checkAnswer(${choice})'>${choice} ${question.choices[choice]}</button>
+          <button class="button is-info is-rounded" name="question${questionsCtr}" onclick='checkAnswer(${choice})'>${choice}. ${question.choices[choice]}</button>
           <br>
           <br>
         </div>
@@ -424,14 +441,14 @@ function displayScores() {
 
   let goBack = document.createElement("button");
   goBack.textContent = "Go Back";
-  goBack.className = "btn edit-btn";
+  goBack.className = "button is-success is-rounded";
   goBack.setAttribute("id", "goback");
   goBack.setAttribute("click", "goBackToHome");
 
 
   let clearScore = document.createElement("button");
   clearScore.textContent = "Clear Highscore";
-  clearScore.className = "btn edit-btn";
+  clearScore.className = "button is-success is-rounded";
   clearScore.setAttribute("id", "clearscore");
 
   scoreH1El.textContent = "Highscores";
@@ -449,7 +466,7 @@ function displayScores() {
 
   for (list in data) {
     tempList.push(`<div id="score">
-    ${parseInt(list) + 1}. ${data[list].name} - ${data[list].score}
+    ${parseInt(list) + 1}. ${data[list].name} - ${data[list].score * 10}
     </div>`);
   }
 
@@ -499,7 +516,7 @@ submitScore.addEventListener("click", saveScore);
 var pollutionEl = $("#pollution");
 // var cityName = 'Toronto';
 var currentDate = moment().format("MM/DD/YYYY");
-var apiKey='936da452efddec94d3bf53bc5ce3701728278b67 '
+var apiKey = '936da452efddec94d3bf53bc5ce3701728278b67 '
 var airPollutionUrl = 'https://api.waqi.info/feed/'
 
 function getPollutionData(cityName) {

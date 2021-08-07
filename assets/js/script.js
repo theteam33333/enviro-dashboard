@@ -1,3 +1,14 @@
+// burger js
+
+const toggleBurger = () => {
+  let burgerIcon = document.getElementById('burger');
+  let dropMenu = document.getElementById('burgerToggle');
+  burgerIcon.classList.toggle('is-active');
+  dropMenu.classList.toggle('is-hidden');
+}
+
+// end burger js
+
 // Guardian climate article api start
 // Retrieve ten climate change article links from the Guardian api
 fetch("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c12-3fa4-4b07-a5fa-72ff409c8dc3")
@@ -7,7 +18,6 @@ fetch("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c
   })
   // Extract article title and url from the dataset
   .then(function (data) {
-    console.log("Guardian api data", data);
     var climateArticleEl = document.querySelector('.climateArticles');
     climateArticleEl.classList.add("guardian");
     var webTitle;
@@ -15,12 +25,15 @@ fetch("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c
     for (let i=0; i < 5; i++) {
       webTitle = (data.response.results[i].webTitle);
       webUrl = (data.response.results[i].webUrl);
-      //var buttonEl = document.createElement("button");
+      let div = document.createElement("div");
+      div.className="title is-4 has-text-centered";
+      climateArticleEl.appendChild(div);
       var aEl = document.createElement("a");
       var aBr = document.createElement("br");
       aEl.href=webUrl;
       aEl.innerHTML=webTitle;
-      climateArticleEl.appendChild(aEl);
+      div.appendChild(aEl);
+      climateArticleEl.appendChild(div);
       climateArticleEl.appendChild(aBr);
     }
   });
@@ -270,7 +283,10 @@ const deforestation = [
 display();
 
 function display() {
+
   let initialScreen = document.createElement("h1");
+  initialScreen.style.fontSize = "20px"
+  initialScreen.style.fontWeight = "bolder"
   initialScreen.innerHTML = `<br>Climate Quiz<br> <br>`;
 
   let paraScreen = document.createElement("p");
@@ -348,7 +364,7 @@ function displayQuestions() {
 
 
   output.push(
-    `   <div id="questions"><h2> ${question.question} </h2></div>
+    `   <div id="questions"><h2 style = "font-weight:bolder; font-size:20px;"> ${question.question} </h2></div>
         <br>
         <div id="choices"> ${choices.join("")} </div>
       `
@@ -391,12 +407,17 @@ function showScore(correctNum) {
 
   let scoreDiv = document.createElement("div");
   let scoreH1El = document.createElement("h1");
+  scoreH1El.style.fontSize = "20px"
+  scoreH1El.style.fontWeight = "bolder"
+
   scoreH1El.innerHTML = "All done!";
 
   let scoreResult = document.createElement("p");
   scoreResult.textContent = `Your final score is: ${correctNum * 10} out of 50`;
 
   let nameLabel = document.createElement("span");
+  nameLabel.style.fontSize = "20px"
+  nameLabel.style.fontWeight = "bolder"
   nameLabel.textContent = "Enter your NAME: ";
 
   let nameInput = document.createElement("input");
@@ -452,6 +473,8 @@ function displayScores() {
   clearScore.setAttribute("id", "clearscore");
 
   scoreH1El.textContent = "Highscores";
+  scoreH1El.style.fontSize = "20px"
+  scoreH1El.style.fontWeight = "bolder"
   highScoreEl.appendChild(scoreH1El);
   scoreList.setAttribute("id", "scoreList");
   highScoreEl.appendChild(scoreList);
@@ -521,19 +544,15 @@ var airPollutionUrl = 'https://api.waqi.info/feed/'
 
 function getPollutionData(cityName) {
  fetch(airPollutionUrl + cityName + "/?token=" + apiKey)
-// fetch(airPollutionUrl + "xyz" + "/?token=" + apiKey)
 .then(function(response){
     return response.json()
 .then(function(pollutionData){
-    console.log("pollutionData= ", pollutionData);
     const {status, data} = pollutionData;
-    console.log("status=", status, "data=", data);
     pollutionEl.empty();
     if (status == "ok"){
     displayPollution(pollutionData);
     }
     else {
-      console.log("City not Found");
       var alertEl = $("<div>");
       alertEl.addClass("notification is-danger");
       alertEl.text("Please check the city name or try another city");
@@ -543,16 +562,12 @@ function getPollutionData(cityName) {
     };
 })
 .catch(function(error){
-  console.log("Something is wrong");
 
 }) 
 });
 }
 
 function displayPollution(pollutionData){
-
-    // clear out the previous data
-    // pollutionEl.empty();
     
     const cityAirQualityEl = $("<div>");
     const cityNameEl = $("<div>");
@@ -573,7 +588,6 @@ function displayPollution(pollutionData){
     uvi = pollutionData.data.forecast.daily.uvi[2].avg;
     oozone = pollutionData.data.forecast.daily.o3[2].avg;
 
-    console.log("pm25=", pm25);
     cityNameEl.text(cityName + " Air Quality");
     if (aqi < 51) {
         airQuality = "Good";
@@ -632,7 +646,6 @@ function displayPollution(pollutionData){
     arrayInfo = [pm25Info, pm10Info, ozoneInfo, uviInfo];
     const arrayPollution = [pm25El, pm10El, ozoneEl, uviEl];
     arrayPollution.forEach(function(arrayItem){
-      console.log()
       const spanEl = $("<span>");
       spanEl.addClass("has-tooltip-multiline");
       spanEl.attr("data-tooltip", arrayInfo[i]);
@@ -659,7 +672,6 @@ $("#cityName").keypress(function(e){
     if(e.keyCode === 13){
     var inputEl = $("#cityName");
     cityName = inputEl.val().toUpperCase();
-    console.log("City name is = ", cityName);
     getPollutionData(cityName);
     e.preventDefault();
     }
@@ -668,108 +680,13 @@ $("#cityName").keypress(function(e){
 searchCityEl.click(function() {
     var inputEl = $("#cityName");
     cityName = inputEl.val().toUpperCase();
-    console.log("City name is = ", cityName);
     getPollutionData(cityName);
 })
 
 
 //  Code for Pollution Widget ends
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Colin -------------------------------------------------------------------------------------------//
-// THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM STARTS HERE-------------------------------------------------------------------------------------------//
+// THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM STARTS HERE
 
 $(".default_option").click(function () {
   $(".dropdown ul").addClass("active");
@@ -781,7 +698,4 @@ $(".dropdown ul li").click(function () {
   $(".dropdown ul").removeClass("active");
 });
 
-
-
-  // Colin -------------------------------------------------------------------------------------------//
-//  THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM ENDS -------------------------------------------------------------------------------------------//
+//  THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM ENDS

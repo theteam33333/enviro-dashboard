@@ -11,16 +11,16 @@ fetch("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c
     climateArticleEl.classList.add("guardian");
     var webTitle;
     var webUrl;
-    for (let i=0; i < 5; i++) {
+    for (let i = 0; i < 5; i++) {
       webTitle = (data.response.results[i].webTitle);
       webUrl = (data.response.results[i].webUrl);
       let div = document.createElement("div");
-      div.className="title is-4 has-text-centered";
+      div.className = "title is-4 has-text-centered";
       climateArticleEl.appendChild(div);
       var aEl = document.createElement("a");
       var aBr = document.createElement("br");
-      aEl.href=webUrl;
-      aEl.innerHTML=webTitle;
+      aEl.href = webUrl;
+      aEl.innerHTML = webTitle;
       div.appendChild(aEl);
       climateArticleEl.appendChild(div);
       climateArticleEl.appendChild(aBr);
@@ -284,7 +284,7 @@ function display() {
   GOOD LUCK !!!! <br> <br></p>`;
 
   let quizImg = document.createElement("img")
-  quizImg.setAttribute("src", "./assets/quizIntro.jpg")
+  quizImg.setAttribute("src", "./assets/images/quizIntro.jpg")
   quizImg.classList.add("quizIntro")
 
 
@@ -532,124 +532,125 @@ var apiKey = '936da452efddec94d3bf53bc5ce3701728278b67 '
 var airPollutionUrl = 'https://api.waqi.info/feed/'
 
 function getPollutionData(cityName) {
- fetch(airPollutionUrl + cityName + "/?token=" + apiKey)
-.then(function(response){
-    return response.json()
-.then(function(pollutionData){
-    const {status, data} = pollutionData;
-    pollutionEl.empty();
-    if (status == "ok"){
-    displayPollution(pollutionData);
-    }
-    else {
-      var alertEl = $("<div>");
-      alertEl.addClass("notification is-danger");
-      alertEl.text("Please check the city name or try another city");
-      searchCityEl.after(alertEl);
-      setTimeout(function(){
-        alertEl.remove();}, 2000)
-    };
-})
-.catch(function(error){
+  fetch(airPollutionUrl + cityName + "/?token=" + apiKey)
+    .then(function (response) {
+      return response.json()
+        .then(function (pollutionData) {
+          const { status, data } = pollutionData;
+          pollutionEl.empty();
+          if (status == "ok") {
+            displayPollution(pollutionData);
+          }
+          else {
+            var alertEl = $("<div>");
+            alertEl.addClass("notification is-danger");
+            alertEl.text("Please check the city name or try another city");
+            searchCityEl.after(alertEl);
+            setTimeout(function () {
+              alertEl.remove();
+            }, 2000)
+          };
+        })
+        .catch(function (error) {
 
-}) 
-});
+        })
+    });
 }
 
-function displayPollution(pollutionData){
-    
-    const cityAirQualityEl = $("<div>");
-    const cityNameEl = $("<div>");
-    const aqiEl = $("<div>");
-    const airQualityEl = $("<div>");
-    const pm25El = $("<div>");
-    const pm10El = $("<div>");
-    const uviEl = $("<div>");
-    const ozoneEl = $("<div>");
-    const pm25DivEl = $("<div>");
-    const pm10DivEl = $("<div>");
+function displayPollution(pollutionData) {
+
+  const cityAirQualityEl = $("<div>");
+  const cityNameEl = $("<div>");
+  const aqiEl = $("<div>");
+  const airQualityEl = $("<div>");
+  const pm25El = $("<div>");
+  const pm10El = $("<div>");
+  const uviEl = $("<div>");
+  const ozoneEl = $("<div>");
+  const pm25DivEl = $("<div>");
+  const pm10DivEl = $("<div>");
+  const spanEl = $("<span>");
+  const iEl = $("<i>");
+
+  aqi = pollutionData.data.aqi;
+  pm25 = pollutionData.data.forecast.daily.pm25[2].avg;
+  pm10 = pollutionData.data.forecast.daily.pm10[2].avg;
+  uvi = pollutionData.data.forecast.daily.uvi[2].avg;
+  oozone = pollutionData.data.forecast.daily.o3[2].avg;
+
+  cityNameEl.text(cityName + " Air Quality");
+  if (aqi < 51) {
+    airQuality = "Good";
+    cityNameEl.addClass("green");
+    aqiEl.addClass("green");
+    airQualityEl.addClass("green");
+  }
+  else if (aqi > 50 && aqi < 101) {
+    airQuality = "Moderate"
+    aqiEl.addClass("yellow");
+    cityNameEl.addClass("yellow");
+    airQualityEl.addClass("yellow");
+  }
+  else if (aqi > 100 && aqi < 151) {
+    airQuality = "Unhealthy";
+    aqiEl.addClass("orange");
+    cityNameEl.addClass("orange");
+    airQualityEl.addClass("orange");
+  }
+  else if (aqi > 150) {
+    airQuality = "Hazardous";
+    aqiEl.addClass("red");
+    cityNameEl.addClass("red");
+    airQualityEl.addClass("red");
+  }
+  cityAirQualityEl.addClass("airQuality");
+
+  iEl.addClass("fas fa-question-circle");
+  pm25DivEl.addClass("info-tool");
+  spanEl.attr("data-tooltip", "tooltip");
+
+  // Fill the data 
+
+  aqiEl.text(aqi);
+  airQualityEl.text(airQuality);
+  pm25El.text("PM2.5 = " + pm25);
+  pm10El.text("PM10 = " + pm10);
+  ozoneEl.text("Ozone = " + oozone);
+  uviEl.text("UV Index = " + uvi);
+
+
+  cityAirQualityEl.append(cityNameEl);
+  cityAirQualityEl.append(aqiEl);
+  cityAirQualityEl.append(airQualityEl);
+  pollutionEl.append(cityAirQualityEl);
+
+
+
+  //  Append the elements
+  var i = 0;
+  pm25Info = "Particulate Matter(PM) are microscopic particles of solid or liquid matter suspended in the air. Fine particles designated as PM2.5 have a diameter of 2.5 micrometer or less. Particulates are the most harmful form of air pollution due to their ability to penetrate deep into the lungs.";
+  pm10Info = "Particulate Matter(PM) are microscopic particles of solid or liquid matter suspended in the air. Fine particles designated as PM10 have a diameter of 10 micrometer or less. They are caused by dust storms, forest fires and burning of fossil fuels in vehicles";
+  ozoneInfo = "This happens when pollutants emitted by cars, power plants, industrial boilers, refineries, chemical plants, and other sources chemically react in the presence of sunlight.Ozone is most likely to reach unhealthy levels on hot sunny days in urban environments.";
+  uviInfo = "The ultraviolet index, or UV index, is an international standard measurement of the strength of the sunburn-producing ultraviolet (UV) radiation at a particular place and time. It's a linear scale. if an individual (without sunscreen) begins to sunburn in 30 minutes at UV index 6, then that individual should expect to sunburn in about 15 minutes at UV index 12.";
+
+  arrayInfo = [pm25Info, pm10Info, ozoneInfo, uviInfo];
+  const arrayPollution = [pm25El, pm10El, ozoneEl, uviEl];
+  arrayPollution.forEach(function (arrayItem) {
     const spanEl = $("<span>");
+    spanEl.addClass("has-tooltip-multiline");
+    spanEl.attr("data-tooltip", arrayInfo[i]);
+    i++;
     const iEl = $("<i>");
-
-    aqi = pollutionData.data.aqi;
-    pm25 = pollutionData.data.forecast.daily.pm25[2].avg;
-    pm10 = pollutionData.data.forecast.daily.pm10[2].avg;
-    uvi = pollutionData.data.forecast.daily.uvi[2].avg;
-    oozone = pollutionData.data.forecast.daily.o3[2].avg;
-
-    cityNameEl.text(cityName + " Air Quality");
-    if (aqi < 51) {
-        airQuality = "Good";
-        cityNameEl.addClass("green");
-        aqiEl.addClass("green");
-        airQualityEl.addClass("green");
-    }
-    else if (aqi > 50 && aqi < 101) {
-        airQuality = "Moderate"
-        aqiEl.addClass("yellow");
-        cityNameEl.addClass("yellow");
-        airQualityEl.addClass("yellow");
-    }
-    else if (aqi > 100 && aqi < 151){
-        airQuality = "Unhealthy";
-        aqiEl.addClass("orange");
-        cityNameEl.addClass("orange");
-        airQualityEl.addClass("orange");
-    }
-    else if (aqi > 150) {
-        airQuality = "Hazardous";
-        aqiEl.addClass("red");
-        cityNameEl.addClass("red");
-        airQualityEl.addClass("red");
-    }
-    cityAirQualityEl.addClass("airQuality");
-
     iEl.addClass("fas fa-question-circle");
-    pm25DivEl.addClass("info-tool");
-    spanEl.attr("data-tooltip", "tooltip");
+    const divEl = $("<div>");
+    divEl.addClass("info-tool");
+    arrayItem.addClass("tooltip");
+    spanEl.append(iEl);
+    divEl.append(spanEl);
+    divEl.append(arrayItem);
+    pollutionEl.append(divEl);
 
-    // Fill the data 
-    
-    aqiEl.text(aqi);
-    airQualityEl.text(airQuality);
-    pm25El.text("PM2.5 = " + pm25);
-    pm10El.text("PM10 = " + pm10);
-    ozoneEl.text("Ozone = " + oozone);
-    uviEl.text("UV Index = " + uvi);
-
-    
-    cityAirQualityEl.append(cityNameEl);
-    cityAirQualityEl.append(aqiEl);
-    cityAirQualityEl.append(airQualityEl);
-    pollutionEl.append(cityAirQualityEl);
-
-    
-    
-    //  Append the elements
-    var i = 0;
-    pm25Info = "Particulate Matter(PM) are microscopic particles of solid or liquid matter suspended in the air. Fine particles designated as PM2.5 have a diameter of 2.5 micrometer or less. Particulates are the most harmful form of air pollution due to their ability to penetrate deep into the lungs.";
-    pm10Info = "Particulate Matter(PM) are microscopic particles of solid or liquid matter suspended in the air. Fine particles designated as PM10 have a diameter of 10 micrometer or less. They are caused by dust storms, forest fires and burning of fossil fuels in vehicles";
-    ozoneInfo = "This happens when pollutants emitted by cars, power plants, industrial boilers, refineries, chemical plants, and other sources chemically react in the presence of sunlight.Ozone is most likely to reach unhealthy levels on hot sunny days in urban environments.";
-    uviInfo = "The ultraviolet index, or UV index, is an international standard measurement of the strength of the sunburn-producing ultraviolet (UV) radiation at a particular place and time. It's a linear scale. if an individual (without sunscreen) begins to sunburn in 30 minutes at UV index 6, then that individual should expect to sunburn in about 15 minutes at UV index 12.";
-
-    arrayInfo = [pm25Info, pm10Info, ozoneInfo, uviInfo];
-    const arrayPollution = [pm25El, pm10El, ozoneEl, uviEl];
-    arrayPollution.forEach(function(arrayItem){
-      const spanEl = $("<span>");
-      spanEl.addClass("has-tooltip-multiline");
-      spanEl.attr("data-tooltip", arrayInfo[i]);
-      i++;
-      const iEl = $("<i>");
-      iEl.addClass("fas fa-question-circle");
-      const divEl = $("<div>");
-      divEl.addClass("info-tool");
-      arrayItem.addClass("tooltip");
-      spanEl.append(iEl);
-      divEl.append(spanEl);
-      divEl.append(arrayItem);
-      pollutionEl.append(divEl);
-
-    })
+  })
 
 }
 
@@ -657,19 +658,19 @@ function displayPollution(pollutionData){
 var searchCityEl = $("#searchCity");
 
 
-$("#cityName").keypress(function(e){
-    if(e.keyCode === 13){
+$("#cityName").keypress(function (e) {
+  if (e.keyCode === 13) {
     var inputEl = $("#cityName");
     cityName = inputEl.val().toUpperCase();
     getPollutionData(cityName);
     e.preventDefault();
-    }
+  }
 })
 
-searchCityEl.click(function() {
-    var inputEl = $("#cityName");
-    cityName = inputEl.val().toUpperCase();
-    getPollutionData(cityName);
+searchCityEl.click(function () {
+  var inputEl = $("#cityName");
+  cityName = inputEl.val().toUpperCase();
+  getPollutionData(cityName);
 })
 
 

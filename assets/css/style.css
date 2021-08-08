@@ -134,6 +134,7 @@ body {
   opacity: 0.9;
   border-radius: 30px;
   overflow-x: scroll;
+  background-color:  #A9D6E5;
 
 }
 ::-webkit-scrollbar {

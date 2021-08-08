@@ -613,7 +613,7 @@ function displayPollution(pollutionData){
         cityNameEl.addClass("red");
         airQualityEl.addClass("red");
     }
-    cityAirQualityEl.addClass("airQuality");
+    cityAirQualityEl.addClass("airQuality has-text-black has-text-weight-bold");
 
     iEl.addClass("fas fa-question-circle");
     pm25DivEl.addClass("info-tool");
@@ -632,6 +632,7 @@ function displayPollution(pollutionData){
     cityAirQualityEl.append(cityNameEl);
     cityAirQualityEl.append(aqiEl);
     cityAirQualityEl.append(airQualityEl);
+    pollutionEl.removeClass("is-hidden");
     pollutionEl.append(cityAirQualityEl);
 
     
@@ -654,7 +655,7 @@ function displayPollution(pollutionData){
       iEl.addClass("fas fa-question-circle");
       const divEl = $("<div>");
       divEl.addClass("info-tool");
-      arrayItem.addClass("tooltip");
+      arrayItem.addClass("tooltip has-text-weight-bold has-text-black");
       spanEl.append(iEl);
       divEl.append(spanEl);
       divEl.append(arrayItem);

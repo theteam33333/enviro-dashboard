@@ -133,6 +133,16 @@ video {
 }
 /* Styling for Pollution Widget ends */
 
+/* Styling for Climate Articles Start */
 .topic-color {
   background-color: #b7e4c7;
 }
+
+.article-color {
+  background-color: #a9d6e5;
+}
+
+.article-tag-color {
+  background-color: #dee2e6;
+}
+/* Styling for Climate Articles End */

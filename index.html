@@ -26,7 +26,7 @@
         }
 
         .content {
-            position: fixed;
+            position: absolute;
             top: 25%;
             margin: 10%;
             background: rgba(0, 0, 0, 0.5);
@@ -52,6 +52,12 @@
         #myBtn:hover {
             background: #ddd;
             color: black;
+        }
+        @media screen and (max-width: 575px) {
+            .content {
+                top: 0%;
+                 
+            }
         }
     </style>
 </head>

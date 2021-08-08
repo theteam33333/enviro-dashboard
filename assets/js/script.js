@@ -26,7 +26,7 @@ fetch("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c
       webTitle = (data.response.results[i].webTitle);
       webUrl = (data.response.results[i].webUrl);
       let div = document.createElement("div");
-      div.className="title is-4 has-text-centered";
+      div.className="title is-4 has-text-centered article-tag-color py-4";
       climateArticleEl.appendChild(div);
       var aEl = document.createElement("a");
       var aBr = document.createElement("br");
@@ -34,7 +34,7 @@ fetch("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c
       aEl.innerHTML=webTitle;
       div.appendChild(aEl);
       climateArticleEl.appendChild(div);
-      climateArticleEl.appendChild(aBr);
+      //climateArticleEl.appendChild(aBr);
     }
   });
 // Guardian climate article api finish

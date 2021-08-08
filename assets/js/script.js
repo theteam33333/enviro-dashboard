@@ -1,3 +1,16 @@
+// burger js
+
+const toggleBurger = () => {
+  let burgerIcon = document.getElementById('burger');
+  let dropMenu = document.getElementById('burgerToggle');
+  let logoIcon = document.getElementById('logo')
+  burgerIcon.classList.toggle('is-active');
+  dropMenu.classList.toggle('is-hidden');
+  logoIcon.classList.toggle('is-hidden');
+}
+
+// end burger js
+
 // Guardian climate article api start
 // Retrieve ten climate change article links from the Guardian api
 fetch("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c12-3fa4-4b07-a5fa-72ff409c8dc3")
@@ -15,15 +28,21 @@ fetch("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c
       webTitle = (data.response.results[i].webTitle);
       webUrl = (data.response.results[i].webUrl);
       let div = document.createElement("div");
+      let div2 = document.createElement("div");
+      let div3 = document.createElement("div");
+      div3.className = "tile is-parent";
+      div2.className = "tile is-child box article-tag-color";
       div.className = "title is-4 has-text-centered";
+      climateArticleEl.appendChild(div3);
+      climateArticleEl.appendChild(div2);
       climateArticleEl.appendChild(div);
       var aEl = document.createElement("a");
-      var aBr = document.createElement("br");
       aEl.href = webUrl;
       aEl.innerHTML = webTitle;
       div.appendChild(aEl);
-      climateArticleEl.appendChild(div);
-      climateArticleEl.appendChild(aBr);
+      div2.appendChild(div);
+      div3.appendChild(div2);
+      climateArticleEl.appendChild(div3);
     }
   });
 // Guardian climate article api finish
@@ -522,7 +541,6 @@ submitScore.addEventListener("click", saveScore);
 
 
 
-
 // Code for Pollution Widget
 
 var pollutionEl = $("#pollution");
@@ -542,6 +560,7 @@ function getPollutionData(cityName) {
             displayPollution(pollutionData);
           }
           else {
+            pollutionEl.addClass("is-hidden");
             var alertEl = $("<div>");
             alertEl.addClass("notification is-danger");
             alertEl.text("Please check the city name or try another city");
@@ -577,7 +596,7 @@ function displayPollution(pollutionData) {
   pm10 = pollutionData.data.forecast.daily.pm10[2].avg;
   uvi = pollutionData.data.forecast.daily.uvi[2].avg;
   oozone = pollutionData.data.forecast.daily.o3[2].avg;
-
+  console.log("Cityname before printing=", cityName);
   cityNameEl.text(cityName + " Air Quality");
   if (aqi < 51) {
     airQuality = "Good";
@@ -603,7 +622,7 @@ function displayPollution(pollutionData) {
     cityNameEl.addClass("red");
     airQualityEl.addClass("red");
   }
-  cityAirQualityEl.addClass("airQuality");
+  cityAirQualityEl.addClass("airQuality has-text-black has-text-weight-bold");
 
   iEl.addClass("fas fa-question-circle");
   pm25DivEl.addClass("info-tool");
@@ -622,6 +641,7 @@ function displayPollution(pollutionData) {
   cityAirQualityEl.append(cityNameEl);
   cityAirQualityEl.append(aqiEl);
   cityAirQualityEl.append(airQualityEl);
+  pollutionEl.removeClass("is-hidden");
   pollutionEl.append(cityAirQualityEl);
 
 
@@ -644,7 +664,7 @@ function displayPollution(pollutionData) {
     iEl.addClass("fas fa-question-circle");
     const divEl = $("<div>");
     divEl.addClass("info-tool");
-    arrayItem.addClass("tooltip");
+    arrayItem.addClass("tooltip has-text-weight-bold has-text-black");
     spanEl.append(iEl);
     divEl.append(spanEl);
     divEl.append(arrayItem);
@@ -656,7 +676,6 @@ function displayPollution(pollutionData) {
 
 // Click the Search button
 var searchCityEl = $("#searchCity");
-
 
 $("#cityName").keypress(function (e) {
   if (e.keyCode === 13) {
@@ -673,19 +692,31 @@ searchCityEl.click(function () {
   getPollutionData(cityName);
 })
 
+// rotate images
+var heroBodyEl = $("#heroBody");
+const imageArray = ["./assets/images/heroimg.jpg", "./assets/images/heroimg-1.jpeg", "./assets/images/heroimg-2.jpeg"]
+var imageRotate = function () {
+  var i = 0;
+  heroBodyEl.css("background-image", "url(" + imageArray[i] + ")");
+  setInterval(function () {
+    i++;
+    if (i == imageArray.length) {
+      i = 0;
+    }
+    heroBodyEl.fadeOut("fast", function () {
+      $(this).css("background-image", "url(" + imageArray[i] + ")");
+      $(this).fadeIn("fast");
+    });
+  }, 5000);
+}
+
+$(document).ready(function () {
+  // rotating images
+  imageRotate();
+
+  cityName = "TORONTO";
+  console.log("cityName on load=", cityName);
+  getPollutionData(cityName);
+})
 
 //  Code for Pollution Widget ends
-
-// THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM STARTS HERE
-
-$(".default_option").click(function () {
-  $(".dropdown ul").addClass("active");
-});
-
-$(".dropdown ul li").click(function () {
-  var text = $(this).text();
-  $(".default_option").text(text);
-  $(".dropdown ul").removeClass("active");
-});
-
-//  THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM ENDS

@@ -22,30 +22,21 @@
 
     <!-- header -->
 
-    <nav class="navbar is-link" role="navigation" aria-label="main navigation" id="navbar">
+    <nav class="navbar is-link level" role="navigation" aria-label="main navigation" id="navbar">
   <div class="navbar-brand">
-    <a class="navbar-item">
+    <a href="welcome.html"><figure class="image is-64x64"><img src="./assets/images/logo.png"></figure></a> <!-- href will have to be renamed to reflect new welcomepage name -->
+    <a class="navbar-item has-text-centered" href="welcome.html"> <!-- href will have to be renamed to reflect new welcomepage name -->
         <strong>The EnviroDashboard</strong>
     </a>
 
-      <div class="navbar-item has-text-white is-hidden-desktop">
-        Climate is Changing...
-      </div>
 
-    <!-- LOGO GOES HERE 
-      <img src="" width="112" height="28">
-    </a> 
-    /LOGO-->
-
-    <a role="button" class="navbar-burger burger" id="burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onclick="toggleBurger()">
+    <a role="button" class="navbar-burger burger" id="burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onclick="toggleBurger()" style="width: 64px; height: 64px;">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
+    
     <div class="navbar-dropdown is-hidden" id="burgerToggle">
-      <a class="navbar-item has-text-white" href="welcome.html">
-        Home
-      </a>
       <a class="navbar-item has-text-white" href="#hero">
         Pollution Index
       </a>
@@ -64,9 +55,6 @@
 
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href="welcome.html">
-        Home
-      </a>
       <a class="navbar-item" href="#hero">
         Pollution Index
       </a>
@@ -76,10 +64,9 @@
       <a class="navbar-item" href="#iBox">
         Key Topics
       </a>
-      <div class="navbar-item has-text-white">
+      <h1 class="navbar-item has-text-white">
         The Climate is Changing... Find out How
-      </div>
-
+      </h1>
     </div>
 
     <div class="navbar-end">
@@ -115,7 +102,7 @@
                         
             <!-- Code for Pollution Widget -->
             <div class="center">
-                <div id="pollution" class="container box has-background-info widget center">
+                <div id="pollution" class="container box has-background-info widget center is-hidden">
                 </div>
             </div>
             <!-- Code for Pollution Widget Ends -->
@@ -226,8 +213,8 @@
     
     <!-- footer -->
 
-        <footer class="footer">
-            <div class="content has-text-centered">
+        <footer class="footer has-background-link">
+            <!-- <div class="content has-text-centered">
               <p>
                 <strong>The EnviroDashboard</strong> by <a href="mailto:theteam33333@gmail.com"></a><strong>Team 3</strong></a>.
                 <br><br>
@@ -235,6 +222,21 @@
                 <br><br>
                 Contact us by email: <a href="mailto:theteam33333@gmail.com" id="contact">theteam33333@gmail.com</a>
               </p>
+            </div> -->
+            <div class="columns">
+              <div class="column is-2"></div>
+              <div class="column">
+                <div class="is-size-5 has-text-white">
+                <strong class="has-text-white">The EnviroDashboard</strong> by <strong class="has-text-white">Team 3</strong>
+                </div>
+              </div>
+              <div class="column-is-2"></div>
+              <div class="column">
+                <div class="is-size-5 has-text-white">
+                  Email: <a href="mailto:theteam33333@gmail.com" id="contact" class="has-text-white">theteam33333@gmail.com</a>
+                </div>
+              </div>
+              <div class="column is-2"></div>
             </div>
           </footer>
     

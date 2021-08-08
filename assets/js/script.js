@@ -683,25 +683,32 @@ searchCityEl.click(function() {
     cityName = inputEl.val().toUpperCase();
     getPollutionData(cityName);
 })
+
+// rotate images
+var heroBodyEl = $("#heroBody");
+const imageArray = ["./assets/images/heroimg.jpg", "./assets/images/heroimg-1.jpeg", "./assets/images/heroimg-2.jpeg"]
+var imageRotate = function() {
+  var i = 0;
+  heroBodyEl.css("background-image", "url(" + imageArray[i] + ")");
+  setInterval(function() {
+    i++;
+    if (i == imageArray.length) {
+      i = 0;
+    }
+    heroBodyEl.fadeOut("fast", function(){
+      $(this).css("background-image", "url(" + imageArray[i] + ")");
+      $(this).fadeIn("fast");
+    });
+  }, 5000);
+}
+
 $(document).ready(function(){
+  // rotating images
+ imageRotate();
+
   cityName = "TORONTO";
  console.log("cityName on load=", cityName);
  getPollutionData(cityName);
 })
 
-
 //  Code for Pollution Widget ends
-
-// THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM STARTS HERE
-
-// $(".default_option").click(function () {
-//   $(".dropdown ul").addClass("active");
-// });
-
-// $(".dropdown ul li").click(function () {
-//   var text = $(this).text();
-//   $(".default_option").text(text);
-//   $(".dropdown ul").removeClass("active");
-// });
-
-//  THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM ENDS

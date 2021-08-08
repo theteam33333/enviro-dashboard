@@ -78,37 +78,27 @@
 </nav>
         <div>
             <!-- hero -->
-            <section class="hero is-primary is-medium" id="hero">
-                <div class="hero-body" style="background-image: url(./assets/images/heroimg.jpg)">
+            <section class="hero is-medium" id="hero">
+                <div class="hero-body" id="heroBody" style="background-image: url(./assets/images/heroimg.jpg)">
                     <div class="columns" id="heroRow">
-                        <div class="column is-2"></div>
-                        <div class="column is-5"></div>
-
+                        <div class="column is-7"></div>
                         <div class="column is-3">
-                            <div class="block center">
-                                <form action="">
-                                    <div class="wrapper">
-                                        <div class="search_box">
-                                            <div class="search_field">
-                                                <input type="text" class="input" id="cityName" onfocus="this.value=''" placeholder="Enter your City">
-                                                <i id="searchCity" class="fas fa-search"></i>
-                                            </div>
-                                        </div>
-                                    
-                                    </div>
-                                </form>
-                               
+            <!-- Code for Search box  -->
+                          <div class="field has-addons has-addons-centered">
+                            <div class="control">
+                                <input type="text" id="cityName" class="input" onfocus="this.value=''" placeholder="Keyword">
                             </div>
-                        
+                            <button type="button" id="searchCity" class="button is-info"><i id="searchCity" class="fas fa-search"></i></button>
+                        </div>
             <!-- Code for Pollution Widget -->
-            <div class="center">
-                <div id="pollution" class="container box has-background-info widget center is-hidden">
-                </div>
-            </div>
+                        <div class="center">
+                            <div id="pollution" class="container box pollution-background widget center is-hidden">
+                            </div>
+                        </div>
             <!-- Code for Pollution Widget Ends -->
                     </div>
 
-                        <div class="column is-2"></div>
+                    <div class="column is-2"></div>
                     </div>
                 </div>
             </div>

@@ -236,3 +236,44 @@ video {
 .topic-color {
   background-color: #b7e4c7;
 }
+
+
+div.image {
+  width:250px; /*width of your image*/
+  height:150px; /*height of your image*/
+  background-image:url('https://www.thoughtco.com/thmb/T7e5vcG6Fb3ti3TH6DD7YGJdA_U=/5250x3862/filters:fill(auto,1)/smoke-and-coal-plant-smokestacks-520518812-584ac8125f9b58a8cd0e87c8.jpg');
+  margin:0; /* If you want no margin */
+  padding:0; /*if your want to padding */
+}
+
+div.image1 {
+  width:250px; /*width of your image*/
+  height:150px; /*height of your image*/
+  background-image:url('https://4.bp.blogspot.com/-aX72_a2F0E0/XCMm3onRJ3I/AAAAAAAAAAY/hsSAkSePoYUtlhtkTeT5RaCEqmLEmVD7ACLcBGAs/w1200-h630-p-k-no-nu/image-wide-2.jpg');
+  margin:0; /* If you want no margin */
+  padding:0; /*if your want to padding */
+}
+
+div.image2 {
+  width:250px; /*width of your image*/
+  height:150px; /*height of your image*/
+  background-image:url('https://whizolosophy.com/public/uploads/images/2017/01/Global-Warming-desk-backgrounds.jpg');
+  margin:0; /* If you want no margin */
+  padding:0; /*if your want to padding */
+}
+
+div.image3 {
+  width:250px; /*width of your image*/
+  height:150px; /*height of your image*/
+  background-image:url('https://www.thoughtco.com/thmb/T7e5vcG6Fb3ti3TH6DD7YGJdA_U=/5250x3862/filters:fill(auto,1)/smoke-and-coal-plant-smokestacks-520518812-584ac8125f9b58a8cd0e87c8.jpg');
+  margin:0; /* If you want no margin */
+  padding:0; /*if your want to padding */
+}
+
+div.image4 {
+  width:250px; /*width of your image*/
+  height:150px; /*height of your image*/
+  background-image:url('https://duckduckgo.com/?q=deforestation&iax=images&ia=images&iai=https%3A%2F%2Feos.org%2Fwp-content%2Fuploads%2F2019%2F08%2Fdeforestation-in-brazil.jpg');
+  margin:0; /* If you want no margin */
+  padding:0; /*if your want to padding */
+}

@@ -3,8 +3,10 @@
 const toggleBurger = () => {
   let burgerIcon = document.getElementById('burger');
   let dropMenu = document.getElementById('burgerToggle');
+  let logoIcon = document.getElementById('logo')
   burgerIcon.classList.toggle('is-active');
   dropMenu.classList.toggle('is-hidden');
+  logoIcon.classList.toggle('is-hidden');
 }
 
 // end burger js

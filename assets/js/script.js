@@ -1,3 +1,16 @@
+// burger js
+
+const toggleBurger = () => {
+  let burgerIcon = document.getElementById('burger');
+  let dropMenu = document.getElementById('burgerToggle');
+  let logoIcon = document.getElementById('logo')
+  burgerIcon.classList.toggle('is-active');
+  dropMenu.classList.toggle('is-hidden');
+  logoIcon.classList.toggle('is-hidden');
+}
+
+// end burger js
+
 // Guardian climate article api start
 // Retrieve ten climate change article links from the Guardian api
 fetch("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c12-3fa4-4b07-a5fa-72ff409c8dc3")
@@ -7,7 +20,6 @@ fetch("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c
   })
   // Extract article title and url from the dataset
   .then(function (data) {
-    console.log("Guardian api data", data);
     var climateArticleEl = document.querySelector('.climateArticles');
     climateArticleEl.classList.add("guardian");
     var webTitle;
@@ -15,13 +27,22 @@ fetch("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c
     for (let i = 0; i < 5; i++) {
       webTitle = (data.response.results[i].webTitle);
       webUrl = (data.response.results[i].webUrl);
-      //var buttonEl = document.createElement("button");
+      let div = document.createElement("div");
+      let div2 = document.createElement("div");
+      let div3 = document.createElement("div");
+      div3.className = "tile is-parent";
+      div2.className = "tile is-child box article-tag-color";
+      div.className = "title is-4 has-text-centered";
+      climateArticleEl.appendChild(div3);
+      climateArticleEl.appendChild(div2);
+      climateArticleEl.appendChild(div);
       var aEl = document.createElement("a");
-      var aBr = document.createElement("br");
       aEl.href = webUrl;
       aEl.innerHTML = webTitle;
-      climateArticleEl.appendChild(aEl);
-      climateArticleEl.appendChild(aBr);
+      div.appendChild(aEl);
+      div2.appendChild(div);
+      div3.appendChild(div2);
+      climateArticleEl.appendChild(div3);
     }
   });
 // Guardian climate article api finish
@@ -47,7 +68,7 @@ const greenEmission = [
     question: "Which of the following is a greenhouse gas?",
     choices: { 1: "CARBON DIOXIDE", 2: "METHANE", 3: "WATER VAPOUR", 4: "ALL OF THE ABOVE" },
     answer: "4",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question: "Which of the following are consequences associated with climate change?",
@@ -58,7 +79,7 @@ const greenEmission = [
       4: "ALL OF THE ABOVE.",
     },
     answer: "4",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question: "Scientists argue that the concentration of greenhouse gases in the atmosphere is:",
@@ -69,7 +90,7 @@ const greenEmission = [
       4: "RAPIDLY DECREASING",
     },
     answer: "1",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question:
@@ -81,7 +102,7 @@ const greenEmission = [
       4: "OZONE",
     },
     answer: "2",
-    img: "https://image.shutterstock.com/image-vector/landscape-photo-image-picture-placeholder-600w-272872412.jpg"
+
   },
 ];
 
@@ -95,7 +116,7 @@ const ozone = [
       4: "NONE OF THE ABOVE",
     },
     answer: "2",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question: "Where do CFCs come from?",
@@ -106,7 +127,7 @@ const ozone = [
       4: "SUN",
     },
     answer: "3",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question: "What is an ozone molecule formed from?",
@@ -117,7 +138,7 @@ const ozone = [
       4: "1 HYDROGEN AND 1 OXYGEN ATOM ",
     },
     answer: "1",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question:
@@ -129,7 +150,7 @@ const ozone = [
       4: "NONE OF ABOVE",
     },
     answer: "2",
-    img: "https://image.shutterstock.com/image-vector/landscape-photo-image-picture-placeholder-600w-272872412.jpg"
+
   },
 ];
 
@@ -138,7 +159,7 @@ const global = [
     question: "How could global warming affect polar regions?",
     choices: { 1: "IT WILL MAKE THEM WARMER", 2: "IT WILL MAKE THEM COLDER", 3: "IT WON'T AFFECT THEM", 4: "IT WILL RESULT IN EXPANSION OF AREA" },
     answer: "1",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question: "Which of the following types of sources of energy do not produce carbon di-oxide?",
@@ -149,7 +170,7 @@ const global = [
       4: "ALL OF THE ABOVE",
     },
     answer: "4",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question: "How can we stop global warming?",
@@ -160,7 +181,7 @@ const global = [
       4: "IT CAN'T BE STOPPED",
     },
     answer: "2",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question:
@@ -172,7 +193,7 @@ const global = [
       4: "CLIMATOLOGIST",
     },
     answer: "4",
-    img: "https://image.shutterstock.com/image-vector/landscape-photo-image-picture-placeholder-600w-272872412.jpg"
+
   },
 ];
 
@@ -181,7 +202,7 @@ const carbonFoot = [
     question: "Which of the following will result in carbon footprint reduction?",
     choices: { 1: "BURNING FOSSIL FUELS", 2: "TAKING LONG SHOWERS", 3: "TURNING ON LIGHTS WHEN NOT IN USE", 4: "AFFORESTATION" },
     answer: "4",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question: "Farmer's tractor adds to the carbon footprint of food because___________?",
@@ -192,7 +213,7 @@ const carbonFoot = [
       4: "IT HAS RED COLOR",
     },
     answer: "3",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question: "Which of these choices in transportation produces less greenhouse gas than the others?",
@@ -203,7 +224,7 @@ const carbonFoot = [
       4: "TAKING A TRAIN",
     },
     answer: "1",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question:
@@ -215,7 +236,7 @@ const carbonFoot = [
       4: "CARBON SUMMARY",
     },
     answer: "3",
-    img: "https://image.shutterstock.com/image-vector/landscape-photo-image-picture-placeholder-600w-272872412.jpg"
+
   },
 ];
 
@@ -225,7 +246,7 @@ const deforestation = [
     question: "How do plants affect carbon dioxide levels in the atmosphere?",
     choices: { 1: "THEY REDUCE THEM", 2: "THEY INCREASE THEM", 3: "THEY MAKE NO DIFFERENCE", 4: "NONE OF THE ABOVE" },
     answer: "1",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question: "Cutting trees on large scale is called_______?",
@@ -236,7 +257,7 @@ const deforestation = [
       4: "NONE OF THE ABOVE",
     },
     answer: "1",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question: "Soil erosion is prevented by_________?",
@@ -247,7 +268,7 @@ const deforestation = [
       4: "NONE OF THE ABOVE",
     },
     answer: "2",
-    img: "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg"
+
   },
   {
     question:
@@ -259,7 +280,7 @@ const deforestation = [
       4: "SULPHUR DIOXIDE",
     },
     answer: "3",
-    img: "https://image.shutterstock.com/image-vector/landscape-photo-image-picture-placeholder-600w-272872412.jpg"
+
   },
 ];
 
@@ -270,13 +291,26 @@ const deforestation = [
 display();
 
 function display() {
+
   let initialScreen = document.createElement("h1");
-  initialScreen.textContent = "Climate Quiz";
+  initialScreen.style.fontSize = "20px"
+  initialScreen.style.fontWeight = "bolder"
+  initialScreen.innerHTML = `<br>Climate Quiz<br> <br>`;
 
   let paraScreen = document.createElement("p");
-  paraScreen.textContent = `Try to answer the following climate-related questions !`;
+  paraScreen.innerHTML = `<p>Try to answer the following climate-related questions!<br>
+  Each correct answer will give you 10 points!<br> <br> <br>
+  GOOD LUCK !!!! <br> <br></p>`;
+
+  let quizImg = document.createElement("img")
+  quizImg.setAttribute("src", "./assets/quizIntro.jpg")
+  quizImg.classList.add("quizIntro")
+
 
   let startBtn = document.createElement("button");
+  startBtn.classList.add("button")
+  startBtn.classList.add("is-primary")
+  startBtn.classList.add("is-rounded")
   startBtn.innerHTML = "Start Quiz";
   startBtn.type = "button";
   startBtn.name = "startBtn";
@@ -284,8 +318,12 @@ function display() {
 
 
   startBtn.addEventListener("click", displayQuestions);
+  startBtn.addEventListener("click", function () {
+    headerEl.style.display = "none"
+  })
 
   initialEl.appendChild(initialScreen);
+  initialEl.appendChild(quizImg)
   initialEl.appendChild(paraScreen);
   initialEl.appendChild(startBtn);
 }
@@ -305,6 +343,9 @@ headerEl.appendChild(ScoreEl);
 
 
 let submitScore = document.createElement("button");
+submitScore.classList.add("button")
+submitScore.classList.add("is-info")
+submitScore.classList.add("is-small")
 submitScore.textContent = "Submit";
 
 const lastQuestion = random.length - 1;
@@ -320,7 +361,7 @@ function displayQuestions() {
   for (choice in question.choices) {
     choices.push(
       `<div>
-          <button name="question${questionsCtr}" onclick='checkAnswer(${choice})'>${choice} ${question.choices[choice]}</button>
+          <button class="button is-info is-rounded" name="question${questionsCtr}" onclick='checkAnswer(${choice})'>${choice}. ${question.choices[choice]}</button>
           <br>
           <br>
         </div>
@@ -331,7 +372,7 @@ function displayQuestions() {
 
 
   output.push(
-    `   <div id="questions"><h2> ${question.question} </h2></div>
+    `   <div id="questions"><h2 style = "font-weight:bolder; font-size:20px;"> ${question.question} </h2></div>
         <br>
         <div id="choices"> ${choices.join("")} </div>
       `
@@ -374,12 +415,17 @@ function showScore(correctNum) {
 
   let scoreDiv = document.createElement("div");
   let scoreH1El = document.createElement("h1");
+  scoreH1El.style.fontSize = "20px"
+  scoreH1El.style.fontWeight = "bolder"
+
   scoreH1El.innerHTML = "All done!";
 
   let scoreResult = document.createElement("p");
   scoreResult.textContent = `Your final score is: ${correctNum * 10} out of 50`;
 
   let nameLabel = document.createElement("span");
+  nameLabel.style.fontSize = "20px"
+  nameLabel.style.fontWeight = "bolder"
   nameLabel.textContent = "Enter your NAME: ";
 
   let nameInput = document.createElement("input");
@@ -424,17 +470,19 @@ function displayScores() {
 
   let goBack = document.createElement("button");
   goBack.textContent = "Go Back";
-  goBack.className = "btn edit-btn";
+  goBack.className = "button is-success is-rounded";
   goBack.setAttribute("id", "goback");
   goBack.setAttribute("click", "goBackToHome");
 
 
   let clearScore = document.createElement("button");
   clearScore.textContent = "Clear Highscore";
-  clearScore.className = "btn edit-btn";
+  clearScore.className = "button is-success is-rounded";
   clearScore.setAttribute("id", "clearscore");
 
   scoreH1El.textContent = "Highscores";
+  scoreH1El.style.fontSize = "20px"
+  scoreH1El.style.fontWeight = "bolder"
   highScoreEl.appendChild(scoreH1El);
   scoreList.setAttribute("id", "scoreList");
   highScoreEl.appendChild(scoreList);
@@ -449,7 +497,7 @@ function displayScores() {
 
   for (list in data) {
     tempList.push(`<div id="score">
-    ${parseInt(list) + 1}. ${data[list].name} - ${data[list].score}
+    ${parseInt(list) + 1}. ${data[list].name} - ${data[list].score * 10}
     </div>`);
   }
 
@@ -493,7 +541,6 @@ submitScore.addEventListener("click", saveScore);
 
 
 
-
 // Code for Pollution Widget
 
 var pollutionEl = $("#pollution");
@@ -502,28 +549,35 @@ var currentDate = moment().format("MM/DD/YYYY");
 var apiKey = '936da452efddec94d3bf53bc5ce3701728278b67 '
 var airPollutionUrl = 'https://api.waqi.info/feed/'
 
+
 function getPollutionData(cityName) {
   fetch(airPollutionUrl + cityName + "/?token=" + apiKey)
-    // fetch(airPollutionUrl + "xyz" + "/?token=" + apiKey)
     .then(function (response) {
       return response.json()
         .then(function (pollutionData) {
-          console.log("pollutionData= ", pollutionData);
           const { status, data } = pollutionData;
-          console.log("status=", status, "data=", data);
-
-          displayPollution(pollutionData);
+          pollutionEl.empty();
+          if (status == "ok") {
+            displayPollution(pollutionData);
+          }
+          else {
+            pollutionEl.addClass("is-hidden");
+            var alertEl = $("<div>");
+            alertEl.addClass("notification is-danger");
+            alertEl.text("Please check the city name or try another city");
+            searchCityEl.after(alertEl);
+            setTimeout(function () {
+              alertEl.remove();
+            }, 2000)
+          };
         })
         .catch(function (error) {
-          console.log("Something is wrong");
+
         })
     });
 }
 
 function displayPollution(pollutionData) {
-
-  // clear out the previous data
-  pollutionEl.empty();
 
   const cityAirQualityEl = $("<div>");
   const cityNameEl = $("<div>");
@@ -533,14 +587,17 @@ function displayPollution(pollutionData) {
   const pm10El = $("<div>");
   const uviEl = $("<div>");
   const ozoneEl = $("<div>");
+  const pm25DivEl = $("<div>");
+  const pm10DivEl = $("<div>");
+  const spanEl = $("<span>");
+  const iEl = $("<i>");
 
   aqi = pollutionData.data.aqi;
   pm25 = pollutionData.data.forecast.daily.pm25[2].avg;
   pm10 = pollutionData.data.forecast.daily.pm10[2].avg;
   uvi = pollutionData.data.forecast.daily.uvi[2].avg;
   oozone = pollutionData.data.forecast.daily.o3[2].avg;
-
-  console.log("pm25=", pm25);
+  console.log("Cityname before printing=", cityName);
   cityNameEl.text(cityName + " Air Quality");
   if (aqi < 51) {
     airQuality = "Good";
@@ -566,148 +623,101 @@ function displayPollution(pollutionData) {
     cityNameEl.addClass("red");
     airQualityEl.addClass("red");
   }
-  cityAirQualityEl.addClass("airQuality");
+  cityAirQualityEl.addClass("airQuality has-text-black has-text-weight-bold");
+
+  iEl.addClass("fas fa-question-circle");
+  pm25DivEl.addClass("info-tool");
+  spanEl.attr("data-tooltip", "tooltip");
+
   // Fill the data 
 
   aqiEl.text(aqi);
   airQualityEl.text(airQuality);
-  pm25El.text("PM2.5 " + pm25);
-  pm10El.text("PM10 " + pm10);
-  ozoneEl.text("O3 " + oozone);
-  uviEl.text("UVI " + uvi);
+  pm25El.text("PM2.5 = " + pm25);
+  pm10El.text("PM10 = " + pm10);
+  ozoneEl.text("Ozone = " + oozone);
+  uviEl.text("UV Index = " + uvi);
 
-  //  Append the elements
+
   cityAirQualityEl.append(cityNameEl);
   cityAirQualityEl.append(aqiEl);
   cityAirQualityEl.append(airQualityEl);
+  pollutionEl.removeClass("is-hidden");
   pollutionEl.append(cityAirQualityEl);
-  pollutionEl.append(pm25El);
-  pollutionEl.append(pm10El);
-  pollutionEl.append(ozoneEl);
-  pollutionEl.append(uviEl);
+
+
+
+  //  Append the elements
+  var i = 0;
+  pm25Info = "Particulate Matter(PM) are microscopic particles of solid or liquid matter suspended in the air. Fine particles designated as PM2.5 have a diameter of 2.5 micrometer or less. Particulates are the most harmful form of air pollution due to their ability to penetrate deep into the lungs.";
+  pm10Info = "Particulate Matter(PM) are microscopic particles of solid or liquid matter suspended in the air. Fine particles designated as PM10 have a diameter of 10 micrometer or less. They are caused by dust storms, forest fires and burning of fossil fuels in vehicles";
+  ozoneInfo = "This happens when pollutants emitted by cars, power plants, industrial boilers, refineries, chemical plants, and other sources chemically react in the presence of sunlight.Ozone is most likely to reach unhealthy levels on hot sunny days in urban environments.";
+  uviInfo = "The ultraviolet index, or UV index, is an international standard measurement of the strength of the sunburn-producing ultraviolet (UV) radiation at a particular place and time. It's a linear scale. if an individual (without sunscreen) begins to sunburn in 30 minutes at UV index 6, then that individual should expect to sunburn in about 15 minutes at UV index 12.";
+
+  arrayInfo = [pm25Info, pm10Info, ozoneInfo, uviInfo];
+  const arrayPollution = [pm25El, pm10El, ozoneEl, uviEl];
+  arrayPollution.forEach(function (arrayItem) {
+    const spanEl = $("<span>");
+    spanEl.addClass("has-tooltip-multiline");
+    spanEl.attr("data-tooltip", arrayInfo[i]);
+    i++;
+    const iEl = $("<i>");
+    iEl.addClass("fas fa-question-circle");
+    const divEl = $("<div>");
+    divEl.addClass("info-tool");
+    arrayItem.addClass("tooltip has-text-weight-bold has-text-black");
+    spanEl.append(iEl);
+    divEl.append(spanEl);
+    divEl.append(arrayItem);
+    pollutionEl.append(divEl);
+
+  })
 
 }
 
 // Click the Search button
 var searchCityEl = $("#searchCity");
 
+$("#cityName").keypress(function (e) {
+  if (e.keyCode === 13) {
+    var inputEl = $("#cityName");
+    cityName = inputEl.val().toUpperCase();
+    getPollutionData(cityName);
+    e.preventDefault();
+  }
+})
+
 searchCityEl.click(function () {
   var inputEl = $("#cityName");
   cityName = inputEl.val().toUpperCase();
-  console.log("City name is = ", cityName);
   getPollutionData(cityName);
 })
 
+// rotate images
+var heroBodyEl = $("#heroBody");
+const imageArray = ["./assets/images/heroimg.jpg", "./assets/images/heroimg-1.jpeg", "./assets/images/heroimg-2.jpeg"]
+var imageRotate = function () {
+  var i = 0;
+  heroBodyEl.css("background-image", "url(" + imageArray[i] + ")");
+  setInterval(function () {
+    i++;
+    if (i == imageArray.length) {
+      i = 0;
+    }
+    heroBodyEl.fadeOut("fast", function () {
+      $(this).css("background-image", "url(" + imageArray[i] + ")");
+      $(this).fadeIn("fast");
+    });
+  }, 5000);
+}
+
+$(document).ready(function () {
+  // rotating images
+  imageRotate();
+
+  cityName = "TORONTO";
+  console.log("cityName on load=", cityName);
+  getPollutionData(cityName);
+})
 
 //  Code for Pollution Widget ends
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Colin -------------------------------------------------------------------------------------------//
-// THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM STARTS HERE-------------------------------------------------------------------------------------------//
-
-$(".default_option").click(function () {
-  $(".dropdown ul").addClass("active");
-});
-
-$(".dropdown ul li").click(function () {
-  var text = $(this).text();
-  $(".default_option").text(text);
-  $(".dropdown ul").removeClass("active");
-});
-
-
-
-  // Colin -------------------------------------------------------------------------------------------//
-//  THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM ENDS -------------------------------------------------------------------------------------------//

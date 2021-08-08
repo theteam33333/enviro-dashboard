@@ -533,7 +533,6 @@ submitScore.addEventListener("click", saveScore);
 
 
 
-
 // Code for Pollution Widget
 
 var pollutionEl = $("#pollution");
@@ -541,6 +540,7 @@ var pollutionEl = $("#pollution");
 var currentDate = moment().format("MM/DD/YYYY");
 var apiKey = '936da452efddec94d3bf53bc5ce3701728278b67 '
 var airPollutionUrl = 'https://api.waqi.info/feed/'
+
 
 function getPollutionData(cityName) {
  fetch(airPollutionUrl + cityName + "/?token=" + apiKey)
@@ -553,6 +553,7 @@ function getPollutionData(cityName) {
     displayPollution(pollutionData);
     }
     else {
+      pollutionEl.addClass("is-hidden");
       var alertEl = $("<div>");
       alertEl.addClass("notification is-danger");
       alertEl.text("Please check the city name or try another city");
@@ -587,7 +588,7 @@ function displayPollution(pollutionData){
     pm10 = pollutionData.data.forecast.daily.pm10[2].avg;
     uvi = pollutionData.data.forecast.daily.uvi[2].avg;
     oozone = pollutionData.data.forecast.daily.o3[2].avg;
-
+    console.log("Cityname before printing=", cityName);
     cityNameEl.text(cityName + " Air Quality");
     if (aqi < 51) {
         airQuality = "Good";
@@ -668,7 +669,6 @@ function displayPollution(pollutionData){
 // Click the Search button
 var searchCityEl = $("#searchCity");
 
-
 $("#cityName").keypress(function(e){
     if(e.keyCode === 13){
     var inputEl = $("#cityName");
@@ -683,20 +683,25 @@ searchCityEl.click(function() {
     cityName = inputEl.val().toUpperCase();
     getPollutionData(cityName);
 })
+$(document).ready(function(){
+  cityName = "TORONTO";
+ console.log("cityName on load=", cityName);
+ getPollutionData(cityName);
+})
 
 
 //  Code for Pollution Widget ends
 
 // THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM STARTS HERE
 
-$(".default_option").click(function () {
-  $(".dropdown ul").addClass("active");
-});
+// $(".default_option").click(function () {
+//   $(".dropdown ul").addClass("active");
+// });
 
-$(".dropdown ul li").click(function () {
-  var text = $(this).text();
-  $(".default_option").text(text);
-  $(".dropdown ul").removeClass("active");
-});
+// $(".dropdown ul li").click(function () {
+//   var text = $(this).text();
+//   $(".default_option").text(text);
+//   $(".dropdown ul").removeClass("active");
+// });
 
 //  THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM ENDS

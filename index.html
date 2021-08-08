@@ -81,111 +81,99 @@
 </nav>
         <div>
             <!-- hero -->
-            <section class="hero is-primary is-medium" id="hero">
-                <div class="hero-body" style="background-image: url(./assets/images/heroimg.jpg)">
+            <section class="hero is-medium" id="hero">
+                <div class="hero-body" id="heroBody" style="background-image: url(./assets/images/heroimg.jpg)">
                     <div class="columns" id="heroRow">
-                        <div class="column is-2"></div>
-                        <div class="column is-5"></div>
-
+                        <div class="column is-7"></div>
                         <div class="column is-3">
-                            <div class="block center">
-                                <form action="">
-                                    <div class="wrapper">
-                                        <div class="search_box">
-                                            <div class="search_field">
-                                                <input type="text" class="input" id="cityName" onfocus="this.value=''" placeholder="Enter your City">
-                                                <i id="searchCity" class="fas fa-search"></i>
-                                            </div>
-                                        </div>
-                                    
-                                    </div>
-                                </form>
-                               
+            <!-- Code for Search box  -->
+                          <div class="field has-addons has-addons-centered">
+                            <div class="control">
+                                <input type="text" id="cityName" class="input" onfocus="this.value=''" placeholder="Search your City">
                             </div>
-                        
+                            <button type="button" id="searchCity" class="button is-info"><i id="searchCity" class="fas fa-search"></i></button>
+                        </div>
             <!-- Code for Pollution Widget -->
-            <div class="center">
-                <div id="pollution" class="container box has-background-info widget center is-hidden">
-                </div>
-            </div>
+                        <div class="center">
+                            <div id="pollution" class="container box pollution-background widget center is-hidden">
+                            </div>
+                        </div>
             <!-- Code for Pollution Widget Ends -->
                     </div>
 
-                        <div class="column is-2"></div>
+                    <div class="column is-2"></div>
                     </div>
                 </div>
             </div>
     </section>    
     <br>
-    <!-- climate api articles -->
-    
-    <div class="tile is-ancestor" id="articles">
-        <div class="tile is-parent is-3">
-        </div>    
-        <div class="tile is-parent is-6">
-            <div class="tile is-child box has-background-primary-light">
-                <h2 class="title is-1 has-text-centered">Climate Change News</h2>
-                    <div class="climateArticles">
-                    </div>
-            </div>
-        </div> 
-    </div>
-    
-<!-- End of climate api articles -->    
 
 <!-- information boxes -->
 
-
     <div class="tile is-ancestor" id="iBox">
-        <div class="tile is-parent">
-
+      <div class="tile is-parent">
 
         <div class="tile is-vertical">
             <div class="tile is-parent">
-            <div class="tile is-child box topic-color">
-            <h1 class="title is-4 has-text-centered">Greenhouse Gas</h1>
-            <h2 class="title is-6 has-text-justified">Greenhouse gas is any gas that is capable of absorbing infrared radiation (net heat energy) emitted from the Earth's surface and reradiating it back to the Earth's surface.</h2>
-            </div>
+              <div class="tile is-child box topic-color">
+                <h1 class="title is-4 has-text-centered">Greenhouse Gas</h1>
+                <figure class="image is-4x3">
+                  <img src="./assets/images/factorysmoke-860x466.jpg">
+                </figure>
+                <h2 class="subtitle is-5 has-text-justified mt-3">Greenhouse gas is any gas that is capable of absorbing infrared radiation (net heat energy) emitted from the Earth's surface and reradiating it back to the Earth's surface.</h2>
+              </div>
             </div>        
         </div>
         
         <div class="tile is-vertical">
             <div class="tile is-parent">
-            <div class="tile is-child box topic-color">
-            <h1 class="title is-4 has-text-centered">Ozone Depletion</h1>
-            <h2 class="title is-6 has-text-justified">Ozone depletion is the gradual thinning of the Earth's ozone layer in the upper atmosphere caused by the release of chemical compounds containing gaseous chlorine or bromine from industry and other human activities.</h2>
-            </div>
+              <div class="tile is-child box topic-color">
+                <h1 class="title is-4 has-text-centered">Ozone Depletion</h1>
+                <figure class="image is-4x3">
+                  <img src="./assets/images/layersofozone3-nasa.jpg">
+                </figure>
+                <h2 class="subtitle is-5 has-text-justified mt-3">Ozone depletion is the gradual thinning of the Earth's ozone layer in the upper atmosphere caused by the release of chemical compounds containing gaseous chlorine or bromine from industry and other human activities.</h2>
+              </div>
             </div>    
         </div>
 
         <div class="tile is-vertical">
             <div class="tile is-parent">
-            <div class="tile is-child box topic-color">
-            <h1 class="title is-4 has-text-centered">Global Warming</h1>
-            <h2 class="title is-6 has-text-justified">Global warming is the increase of the average air temperature near the surface of the Earth over the past one to two centuries due to the influence of human activities. This increase is affecting temperatures, precipitation and storms. It is also influencing ocean currents and atmospheric chemical composition to significantly alter weather events.</h2>
-            </div>
+              <div class="tile is-child box topic-color">
+                <h1 class="title is-4 has-text-centered">Global Warming</h1>
+                <figure class="image is-4x3">
+                  <img src="./assets/images/climate-change--extreme-weather--global-warming.jpg">
+                </figure>
+                <h2 class="subtitle is-5 has-text-justified mt-3">Global warming is the increase of the average air temperature near the surface of the Earth over the past one to two centuries due to the influence of human activities. This increase is affecting temperatures, precipitation and storms. It is also influencing ocean currents and atmospheric chemical composition to significantly alter weather events.</h2>
+              </div>
             </div>    
         </div>
 
         <div class="tile is-vertical">
             <div class="tile is-parent">
-            <div class="tile is-child box topic-color">
-            <h1 class="title is-4 has-text-centered">Carbon Footprint</h1>
-            <h2 class="title is-6 has-text-justified">Carbon footprint is the amount of carbon dioxide (CO2) emissions associated with all the activities of a person, building, corporation, country, etc. It includes direct emissions from those entities along with emissions produced by other entities who provide/produce services/goods that are consumed. Fossil fuels and greenhouse gases such as methane, nitrous oxide and chlorofluorocarbons are examples of problematic emissions.</h2>
-            </div>
+              <div class="tile is-child box topic-color">
+                <h1 class="title is-4 has-text-centered">Carbon Footprint</h1>
+                <figure class="image is-4x3">
+                  <img src="./assets/images/carbon-footprint.jpeg">
+                </figure>
+                <h2 class="subtitle is-5 has-text-justified mt-3">Carbon footprint is the amount of carbon dioxide (CO2) emissions associated with all the activities of a person, building, corporation, country, etc. It includes direct emissions from those entities along with emissions produced by other entities who provide/produce services/goods that are consumed. Fossil fuels and greenhouse gases such as methane, nitrous oxide and chlorofluorocarbons are examples of problematic emissions.</h2>
+              </div>
             </div>    
         </div>
 
         <div class="tile is-vertical">
             <div class="tile is-parent">
-            <div class="tile is-child box topic-color">
-            <h1 class="title is-4 has-text-centered">Deforestation</h1>
-            <h2 class="title is-6 has-text-justified">Deforestation is the clearing or thinning of forests by humans. Forests are important factor in absorbing carbon dioxide from the atmosphere. As such, the reduction in forests contributes to greenhouse gas emission issues and global warming.</h2>
-            </div>
+              <div class="tile is-child box topic-color">
+                <h1 class="title is-4 has-text-centered">Deforestation</h1>
+                <figure class="image is-4x3">
+                  <img src="./assets/images/photo-1443188987226-256ecbeda3cc.jfif">
+                </figure>
+                <h2 class="subtitle is-5 has-text-justified mt-3">Deforestation is the clearing or thinning of forests by humans. Forests are important factor in absorbing carbon dioxide from the atmosphere. As such, the reduction in forests contributes to greenhouse gas emission issues and global warming.</h2>
+              </div>
             </div>    
         </div>
-        </div>
 
+      </div>
     </div>
         <!-- infoboxes end -->
 
@@ -214,6 +202,20 @@
     </section>
     <!-- quiz code ends -->
     
+    <!-- Start of climate api articles -->
+    <div class="tile is-ancestor" id="articles">
+      <div class="tile is-parent is-2">
+      </div>    
+      <div class="tile is-parent is-8">
+          <div class="tile is-child box article-color">
+              <h2 class="title is-1 has-text-centered">Explore Climate Change News</h2>
+                  <div class="climateArticles">
+                  </div>
+          </div>
+      </div> 
+    </div> 
+    <!-- End of climate api articles -->
+
     <!-- footer -->
 
     <footer class="footer has-background-link">

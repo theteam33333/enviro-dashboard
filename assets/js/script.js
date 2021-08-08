@@ -28,15 +28,21 @@ fetch("https://content.guardianapis.com/search?q=climate%20change&api-key=2b864c
       webTitle = (data.response.results[i].webTitle);
       webUrl = (data.response.results[i].webUrl);
       let div = document.createElement("div");
+      let div2 = document.createElement("div");
+      let div3 = document.createElement("div");
+      div3.className="tile is-parent";
+      div2.className="tile is-child box article-tag-color";
       div.className="title is-4 has-text-centered";
+      climateArticleEl.appendChild(div3);
+      climateArticleEl.appendChild(div2);
       climateArticleEl.appendChild(div);
       var aEl = document.createElement("a");
-      var aBr = document.createElement("br");
       aEl.href=webUrl;
       aEl.innerHTML=webTitle;
       div.appendChild(aEl);
-      climateArticleEl.appendChild(div);
-      climateArticleEl.appendChild(aBr);
+      div2.appendChild(div);
+      div3.appendChild(div2);
+      climateArticleEl.appendChild(div3);
     }
   });
 // Guardian climate article api finish
@@ -535,7 +541,6 @@ submitScore.addEventListener("click", saveScore);
 
 
 
-
 // Code for Pollution Widget
 
 var pollutionEl = $("#pollution");
@@ -543,6 +548,7 @@ var pollutionEl = $("#pollution");
 var currentDate = moment().format("MM/DD/YYYY");
 var apiKey = '936da452efddec94d3bf53bc5ce3701728278b67 '
 var airPollutionUrl = 'https://api.waqi.info/feed/'
+
 
 function getPollutionData(cityName) {
  fetch(airPollutionUrl + cityName + "/?token=" + apiKey)
@@ -555,6 +561,7 @@ function getPollutionData(cityName) {
     displayPollution(pollutionData);
     }
     else {
+      pollutionEl.addClass("is-hidden");
       var alertEl = $("<div>");
       alertEl.addClass("notification is-danger");
       alertEl.text("Please check the city name or try another city");
@@ -589,7 +596,7 @@ function displayPollution(pollutionData){
     pm10 = pollutionData.data.forecast.daily.pm10[2].avg;
     uvi = pollutionData.data.forecast.daily.uvi[2].avg;
     oozone = pollutionData.data.forecast.daily.o3[2].avg;
-
+    console.log("Cityname before printing=", cityName);
     cityNameEl.text(cityName + " Air Quality");
     if (aqi < 51) {
         airQuality = "Good";
@@ -670,7 +677,6 @@ function displayPollution(pollutionData){
 // Click the Search button
 var searchCityEl = $("#searchCity");
 
-
 $("#cityName").keypress(function(e){
     if(e.keyCode === 13){
     var inputEl = $("#cityName");
@@ -686,19 +692,31 @@ searchCityEl.click(function() {
     getPollutionData(cityName);
 })
 
+// rotate images
+var heroBodyEl = $("#heroBody");
+const imageArray = ["./assets/images/heroimg.jpg", "./assets/images/heroimg-1.jpeg", "./assets/images/heroimg-2.jpeg"]
+var imageRotate = function() {
+  var i = 0;
+  heroBodyEl.css("background-image", "url(" + imageArray[i] + ")");
+  setInterval(function() {
+    i++;
+    if (i == imageArray.length) {
+      i = 0;
+    }
+    heroBodyEl.fadeOut("fast", function(){
+      $(this).css("background-image", "url(" + imageArray[i] + ")");
+      $(this).fadeIn("fast");
+    });
+  }, 5000);
+}
+
+$(document).ready(function(){
+  // rotating images
+ imageRotate();
+
+  cityName = "TORONTO";
+ console.log("cityName on load=", cityName);
+ getPollutionData(cityName);
+})
 
 //  Code for Pollution Widget ends
-
-// THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM STARTS HERE
-
-$(".default_option").click(function () {
-  $(".dropdown ul").addClass("active");
-});
-
-$(".dropdown ul li").click(function () {
-  var text = $(this).text();
-  $(".default_option").text(text);
-  $(".dropdown ul").removeClass("active");
-});
-
-//  THE JAVASCRIPT CODE FOR THE SEARCH INPUT FORM ENDS
